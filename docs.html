@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation — Tools That Work</title>
+  <meta name="description" content="Complete API reference for ClipCraft, AutoTube, and MeshReady. Interactive endpoint docs with try-it panels.">
+  <meta property="og:title" content="API Documentation — Tools That Work">
+  <meta property="og:description" content="Interactive API reference for all Tools That Work products.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236c5ce7'/><text x='16' y='23' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='system-ui'>T</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/docs.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#6c5ce7"/><text x="16" y="23" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">T</text></svg>
+        Tools That Work
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="#">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="clipcraft.html"><svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> ClipCraft API</a>
+            <a href="autotube.html"><svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> AutoTube</a>
+            <a href="meshready.html"><svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> MeshReady API</a>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="docs.html" class="active">Docs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Docs Layout -->
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="sidebar-section">
+        <h4>Getting Started</h4>
+        <a href="#authentication" class="sidebar-link active">Authentication</a>
+        <a href="#rate-limiting" class="sidebar-link">Rate Limiting</a>
+        <a href="#errors" class="sidebar-link">Error Codes</a>
+        <a href="#sdks" class="sidebar-link">SDKs</a>
+      </div>
+      <div class="sidebar-section">
+        <h4>ClipCraft</h4>
+        <a href="#clipcraft-generate" class="sidebar-link"><span class="method-badge method-post">POST</span> Generate Video</a>
+        <a href="#clipcraft-status" class="sidebar-link"><span class="method-badge method-get">GET</span> Job Status</a>
+        <a href="#clipcraft-list" class="sidebar-link"><span class="method-badge method-get">GET</span> List Videos</a>
+        <a href="#clipcraft-delete" class="sidebar-link"><span class="method-badge method-delete">DEL</span> Delete Video</a>
+      </div>
+      <div class="sidebar-section">
+        <h4>AutoTube</h4>
+        <a href="#autotube-channels" class="sidebar-link"><span class="method-badge method-post">POST</span> Create Channel</a>
+        <a href="#autotube-schedule" class="sidebar-link"><span class="method-badge method-post">POST</span> Set Schedule</a>
+        <a href="#autotube-analytics" class="sidebar-link"><span class="method-badge method-get">GET</span> Analytics</a>
+      </div>
+      <div class="sidebar-section">
+        <h4>MeshReady</h4>
+        <a href="#meshready-generate" class="sidebar-link"><span class="method-badge method-post">POST</span> Generate Asset</a>
+        <a href="#meshready-status" class="sidebar-link"><span class="method-badge method-get">GET</span> Job Status</a>
+        <a href="#meshready-catalog" class="sidebar-link"><span class="method-badge method-get">GET</span> Asset Catalog</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+      <h1>API Reference</h1>
+      <p>Welcome to the Tools That Work API documentation. This reference covers all endpoints for ClipCraft, AutoTube, and MeshReady.</p>
+      <p>Base URL for all requests: <code style="background: var(--surface-alt); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9rem;">https://api.toolsthatwork.dev</code></p>
+
+      <!-- Authentication -->
+      <h2 id="authentication" class="docs-section">Authentication</h2>
+      <p>All API requests require authentication via a Bearer token in the <code style="background: var(--surface-alt); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.85rem;">Authorization</code> header.</p>
+      <div class="code-block">
+        <div class="code-header"><span>HTTP Header</span><button class="code-copy">Copy</button></div>
+        <div class="code-content"><span class="property">Authorization</span>: Bearer <span class="string">YOUR_API_KEY</span></div>
+      </div>
+      <p>You can generate API keys from your <a href="#">Dashboard</a>. Each key is scoped to your account and can access all three products based on your plan.</p>
+      <div class="info-box info-box-warn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p>Never share your API key publicly. If you believe a key has been compromised, revoke it immediately from the dashboard and generate a new one.</p>
+      </div>
+
+      <!-- Rate Limiting -->
+      <h2 id="rate-limiting" class="docs-section">Rate Limiting</h2>
+      <p>Rate limits depend on your plan tier. Exceeding the rate limit returns a <code style="background: var(--surface-alt); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.85rem;">429 Too Many Requests</code> response.</p>
+      <table class="error-table">
+        <thead><tr><th>Plan</th><th>Rate Limit</th><th>Monthly Quota</th></tr></thead>
+        <tbody>
+          <tr><td>Free</td><td>10 requests/min</td><td>50 calls</td></tr>
+          <tr><td>Pro</td><td>60 requests/min</td><td>2,000 calls</td></tr>
+          <tr><td>Enterprise</td><td>300 requests/min</td><td>Unlimited</td></tr>
+        </tbody>
+      </table>
+      <p>Rate limit headers are included in every response:</p>
+      <div class="code-block">
+        <div class="code-header"><span>Response Headers</span></div>
+        <div class="code-content"><span class="property">X-RateLimit-Limit</span>: <span class="number">60</span>
+<span class="property">X-RateLimit-Remaining</span>: <span class="number">58</span>
+<span class="property">X-RateLimit-Reset</span>: <span class="number">1714003200</span></div>
+      </div>
+
+      <!-- Errors -->
+      <h2 id="errors" class="docs-section">Error Codes</h2>
+      <p>The API uses conventional HTTP status codes. Errors return a JSON body with details.</p>
+      <div class="code-block">
+        <div class="code-header"><span>Error Response Format</span></div>
+        <div class="code-content">{
+  <span class="property">"error"</span>: {
+    <span class="property">"code"</span>: <span class="string">"invalid_api_key"</span>,
+    <span class="property">"message"</span>: <span class="string">"The provided API key is invalid or expired."</span>,
+    <span class="property">"status"</span>: <span class="number">401</span>
+  }
+}</div>
+      </div>
+      <table class="error-table">
+        <thead><tr><th>Code</th><th>Meaning</th><th>Common Cause</th></tr></thead>
+        <tbody>
+          <tr><td>400</td><td>Bad Request</td><td>Invalid JSON or missing required fields</td></tr>
+          <tr><td>401</td><td>Unauthorized</td><td>Missing or invalid API key</td></tr>
+          <tr><td>403</td><td>Forbidden</td><td>Plan does not include this feature</td></tr>
+          <tr><td>404</td><td>Not Found</td><td>Job or resource does not exist</td></tr>
+          <tr><td>429</td><td>Rate Limited</td><td>Too many requests — slow down</td></tr>
+          <tr><td>500</td><td>Server Error</td><td>Internal error — retry with exponential backoff</td></tr>
+        </tbody>
+      </table>
+
+      <!-- SDKs -->
+      <h2 id="sdks" class="docs-section">SDKs</h2>
+      <div class="info-box info-box-info">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <p>Official SDKs are coming soon. We are actively developing libraries for Python, Node.js, and Go. In the meantime, use any HTTP client — our REST API works with any language.</p>
+      </div>
+      <div class="grid-3" style="margin-top: 20px;">
+        <div class="card" style="padding: 20px;">
+          <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">Python <span class="badge badge-primary" style="font-size: 0.65rem;">Coming Soon</span></h4>
+          <p style="font-size: 0.85rem; margin: 0;"><code style="font-size: 0.8rem;">pip install toolsthatwork</code></p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">Node.js <span class="badge badge-primary" style="font-size: 0.65rem;">Coming Soon</span></h4>
+          <p style="font-size: 0.85rem; margin: 0;"><code style="font-size: 0.8rem;">npm install @toolsthatwork/sdk</code></p>
+        </div>
+        <div class="card" style="padding: 20px;">
+          <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">Go <span class="badge badge-primary" style="font-size: 0.65rem;">Coming Soon</span></h4>
+          <p style="font-size: 0.85rem; margin: 0;"><code style="font-size: 0.8rem;">go get toolsthatwork.dev/sdk</code></p>
+        </div>
+      </div>
+
+      <!-- ===== CLIPCRAFT ENDPOINTS ===== -->
+      <h2 id="clipcraft" style="color: var(--primary-light);">ClipCraft API</h2>
+
+      <div class="endpoint" id="clipcraft-generate">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-post" style="background: rgba(108,92,231,0.15); color: var(--primary-light);">POST</span>
+          <span class="endpoint-path">/v1/video/generate</span>
+        </div>
+        <p>Generate a complete video from a topic. Returns a job ID that can be polled for status.</p>
+        <h3>Request Body</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span><button class="code-copy">Copy</button></div>
+          <div class="code-content">{
+  <span class="property">"topic"</span>: <span class="string">"Top 5 Productivity Hacks"</span>,       <span class="comment">// required</span>
+  <span class="property">"style"</span>: <span class="string">"listicle"</span>,                        <span class="comment">// "educational" | "listicle" | "storytelling" | "tutorial"</span>
+  <span class="property">"voice"</span>: <span class="string">"nova"</span>,                            <span class="comment">// see voice list below</span>
+  <span class="property">"format"</span>: <span class="string">"landscape"</span>,                      <span class="comment">// "landscape" | "portrait"</span>
+  <span class="property">"music"</span>: <span class="keyword">true</span>,                              <span class="comment">// optional, default false</span>
+  <span class="property">"captions"</span>: <span class="keyword">true</span>,                           <span class="comment">// optional, default true</span>
+  <span class="property">"thumbnail"</span>: <span class="keyword">true</span>                            <span class="comment">// optional, default true</span>
+}</div>
+        </div>
+        <h3>Response (202 Accepted)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span></div>
+          <div class="code-content">{
+  <span class="property">"id"</span>: <span class="string">"job_a1b2c3d4e5"</span>,
+  <span class="property">"status"</span>: <span class="string">"processing"</span>,
+  <span class="property">"estimated_time"</span>: <span class="number">120</span>,
+  <span class="property">"poll_url"</span>: <span class="string">"/v1/video/status/job_a1b2c3d4e5"</span>
+}</div>
+        </div>
+
+        <!-- Try It -->
+        <div class="try-it">
+          <div class="try-it-header"><h4>Try it out</h4></div>
+          <div class="try-it-body">
+            <div class="try-it-field">
+              <label>API Key</label>
+              <input type="text" data-field="api-key" placeholder="Bearer YOUR_API_KEY">
+            </div>
+            <div class="try-it-field">
+              <label>URL</label>
+              <input type="text" data-field="url" value="https://api.toolsthatwork.dev/v1/video/generate">
+            </div>
+            <div class="try-it-field" style="display:none;"><span data-field="method">POST</span></div>
+            <div class="try-it-field">
+              <label>Request Body (JSON)</label>
+              <textarea data-field="body">{
+  "topic": "Top 5 Productivity Hacks",
+  "style": "listicle",
+  "voice": "nova",
+  "format": "landscape"
+}</textarea>
+            </div>
+            <button class="try-it-send">Send Request</button>
+            <div class="try-it-response"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="endpoint" id="clipcraft-status">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-get" style="background: rgba(0,206,201,0.15); color: var(--secondary);">GET</span>
+          <span class="endpoint-path">/v1/video/status/{job_id}</span>
+        </div>
+        <p>Check the status of a video generation job. Poll this endpoint until status is <code style="background: var(--surface-alt); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.85rem;">completed</code> or <code style="background: var(--surface-alt); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.85rem;">failed</code>.</p>
+        <h3>Response (200 OK)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON — Completed</span></div>
+          <div class="code-content">{
+  <span class="property">"id"</span>: <span class="string">"job_a1b2c3d4e5"</span>,
+  <span class="property">"status"</span>: <span class="string">"completed"</span>,
+  <span class="property">"video_url"</span>: <span class="string">"https://cdn.toolsthatwork.dev/v/abc123.mp4"</span>,
+  <span class="property">"thumbnail_url"</span>: <span class="string">"https://cdn.toolsthatwork.dev/t/abc123.jpg"</span>,
+  <span class="property">"duration"</span>: <span class="number">185</span>,
+  <span class="property">"format"</span>: <span class="string">"mp4"</span>,
+  <span class="property">"resolution"</span>: <span class="string">"1920x1080"</span>,
+  <span class="property">"created_at"</span>: <span class="string">"2026-04-09T14:30:00Z"</span>
+}</div>
+        </div>
+      </div>
+
+      <div class="endpoint" id="clipcraft-list">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-get" style="background: rgba(0,206,201,0.15); color: var(--secondary);">GET</span>
+          <span class="endpoint-path">/v1/video/list</span>
+        </div>
+        <p>Retrieve a paginated list of all generated videos for your account.</p>
+        <h3>Query Parameters</h3>
+        <table class="error-table">
+          <thead><tr><th>Param</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>page</td><td>integer</td><td>Page number (default: 1)</td></tr>
+            <tr><td>per_page</td><td>integer</td><td>Results per page (default: 20, max: 100)</td></tr>
+            <tr><td>status</td><td>string</td><td>Filter by status: processing, completed, failed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="endpoint" id="clipcraft-delete">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-delete" style="background: rgba(225,112,85,0.15); color: var(--warning);">DELETE</span>
+          <span class="endpoint-path">/v1/video/{video_id}</span>
+        </div>
+        <p>Delete a video and its associated assets (thumbnail, audio). This action is irreversible.</p>
+        <h3>Response (204 No Content)</h3>
+        <p>Returns an empty response on success.</p>
+      </div>
+
+      <!-- ===== AUTOTUBE ENDPOINTS ===== -->
+      <h2 id="autotube" style="color: var(--secondary);">AutoTube API</h2>
+
+      <div class="endpoint" id="autotube-channels">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-post" style="background: rgba(108,92,231,0.15); color: var(--primary-light);">POST</span>
+          <span class="endpoint-path">/v1/autotube/channels</span>
+        </div>
+        <p>Create and configure a new automated YouTube channel. Requires OAuth connection for auto-upload.</p>
+        <h3>Request Body</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span><button class="code-copy">Copy</button></div>
+          <div class="code-content">{
+  <span class="property">"name"</span>: <span class="string">"Space Facts Daily"</span>,
+  <span class="property">"niche"</span>: <span class="string">"science"</span>,
+  <span class="property">"voice"</span>: <span class="string">"adam"</span>,
+  <span class="property">"style"</span>: <span class="string">"cinematic"</span>,
+  <span class="property">"formats"</span>: [<span class="string">"long"</span>, <span class="string">"shorts"</span>],
+  <span class="property">"youtube_oauth_token"</span>: <span class="string">"ya29.a0AfH6..."</span>,     <span class="comment">// optional</span>
+  <span class="property">"auto_upload"</span>: <span class="keyword">true</span>
+}</div>
+        </div>
+        <h3>Response (201 Created)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span></div>
+          <div class="code-content">{
+  <span class="property">"id"</span>: <span class="string">"ch_x9y8z7"</span>,
+  <span class="property">"name"</span>: <span class="string">"Space Facts Daily"</span>,
+  <span class="property">"niche"</span>: <span class="string">"science"</span>,
+  <span class="property">"status"</span>: <span class="string">"active"</span>,
+  <span class="property">"auto_upload"</span>: <span class="keyword">true</span>,
+  <span class="property">"topics_remaining"</span>: <span class="number">50</span>,
+  <span class="property">"created_at"</span>: <span class="string">"2026-04-09T14:30:00Z"</span>
+}</div>
+        </div>
+      </div>
+
+      <div class="endpoint" id="autotube-schedule">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-post" style="background: rgba(108,92,231,0.15); color: var(--primary-light);">POST</span>
+          <span class="endpoint-path">/v1/autotube/channels/{channel_id}/schedule</span>
+        </div>
+        <p>Set or update the publishing schedule for a channel.</p>
+        <h3>Request Body</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span><button class="code-copy">Copy</button></div>
+          <div class="code-content">{
+  <span class="property">"frequency"</span>: <span class="string">"daily"</span>,              <span class="comment">// "daily" | "every_other_day" | "weekly"</span>
+  <span class="property">"publish_time"</span>: <span class="string">"14:00"</span>,            <span class="comment">// UTC time</span>
+  <span class="property">"timezone"</span>: <span class="string">"America/New_York"</span>,
+  <span class="property">"long_form_ratio"</span>: <span class="number">0.7</span>,              <span class="comment">// 70% long-form, 30% Shorts</span>
+  <span class="property">"active"</span>: <span class="keyword">true</span>
+}</div>
+        </div>
+      </div>
+
+      <div class="endpoint" id="autotube-analytics">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-get" style="background: rgba(0,206,201,0.15); color: var(--secondary);">GET</span>
+          <span class="endpoint-path">/v1/autotube/channels/{channel_id}/analytics</span>
+        </div>
+        <p>Retrieve analytics data for a channel. Includes views, subscribers, watch time, and video performance.</p>
+        <h3>Query Parameters</h3>
+        <table class="error-table">
+          <thead><tr><th>Param</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>period</td><td>string</td><td>"7d", "30d", "90d", or "all" (default: "30d")</td></tr>
+          </tbody>
+        </table>
+        <h3>Response (200 OK)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span></div>
+          <div class="code-content">{
+  <span class="property">"channel_id"</span>: <span class="string">"ch_x9y8z7"</span>,
+  <span class="property">"period"</span>: <span class="string">"30d"</span>,
+  <span class="property">"views"</span>: <span class="number">12480</span>,
+  <span class="property">"subscribers_gained"</span>: <span class="number">341</span>,
+  <span class="property">"watch_hours"</span>: <span class="number">892.5</span>,
+  <span class="property">"videos_published"</span>: <span class="number">28</span>,
+  <span class="property">"top_video"</span>: {
+    <span class="property">"title"</span>: <span class="string">"10 Facts About Black Holes"</span>,
+    <span class="property">"views"</span>: <span class="number">3210</span>
+  }
+}</div>
+        </div>
+      </div>
+
+      <!-- ===== MESHREADY ENDPOINTS ===== -->
+      <h2 id="meshready" style="color: var(--warning);">MeshReady API</h2>
+
+      <div class="endpoint" id="meshready-generate">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-post" style="background: rgba(108,92,231,0.15); color: var(--primary-light);">POST</span>
+          <span class="endpoint-path">/v1/mesh/generate</span>
+        </div>
+        <p>Generate a game-ready 3D asset from a text prompt. Returns a job ID for polling.</p>
+        <h3>Request Body</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span><button class="code-copy">Copy</button></div>
+          <div class="code-content">{
+  <span class="property">"prompt"</span>: <span class="string">"Medieval wooden barrel with iron bands"</span>,  <span class="comment">// required</span>
+  <span class="property">"quality"</span>: <span class="string">"standard"</span>,           <span class="comment">// "draft" | "standard" | "high"</span>
+  <span class="property">"format"</span>: <span class="string">"glb"</span>,                 <span class="comment">// "glb" | "fbx" | "obj"</span>
+  <span class="property">"engine"</span>: <span class="string">"unity"</span>,               <span class="comment">// "unity" | "unreal" | "godot" | "generic"</span>
+  <span class="property">"lod_levels"</span>: <span class="number">4</span>,                  <span class="comment">// 1-4, default 4</span>
+  <span class="property">"textures"</span>: {
+    <span class="property">"resolution"</span>: <span class="string">"2k"</span>,             <span class="comment">// "1k" | "2k" | "4k"</span>
+    <span class="property">"maps"</span>: [<span class="string">"albedo"</span>, <span class="string">"normal"</span>, <span class="string">"roughness"</span>, <span class="string">"metallic"</span>, <span class="string">"ao"</span>]
+  }
+}</div>
+        </div>
+        <h3>Response (202 Accepted)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span></div>
+          <div class="code-content">{
+  <span class="property">"id"</span>: <span class="string">"mesh_f5e4d3c2"</span>,
+  <span class="property">"status"</span>: <span class="string">"processing"</span>,
+  <span class="property">"estimated_time"</span>: <span class="number">180</span>,
+  <span class="property">"poll_url"</span>: <span class="string">"/v1/mesh/status/mesh_f5e4d3c2"</span>
+}</div>
+        </div>
+
+        <!-- Try It -->
+        <div class="try-it">
+          <div class="try-it-header"><h4>Try it out</h4></div>
+          <div class="try-it-body">
+            <div class="try-it-field">
+              <label>API Key</label>
+              <input type="text" data-field="api-key" placeholder="Bearer YOUR_API_KEY">
+            </div>
+            <div class="try-it-field">
+              <label>URL</label>
+              <input type="text" data-field="url" value="https://api.toolsthatwork.dev/v1/mesh/generate">
+            </div>
+            <div class="try-it-field" style="display:none;"><span data-field="method">POST</span></div>
+            <div class="try-it-field">
+              <label>Request Body (JSON)</label>
+              <textarea data-field="body">{
+  "prompt": "Medieval wooden barrel with iron bands",
+  "quality": "standard",
+  "format": "glb",
+  "engine": "unity",
+  "lod_levels": 4
+}</textarea>
+            </div>
+            <button class="try-it-send">Send Request</button>
+            <div class="try-it-response"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="endpoint" id="meshready-status">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-get" style="background: rgba(0,206,201,0.15); color: var(--secondary);">GET</span>
+          <span class="endpoint-path">/v1/mesh/status/{job_id}</span>
+        </div>
+        <p>Check the status of a mesh generation job.</p>
+        <h3>Response (200 OK) — Completed</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span></div>
+          <div class="code-content">{
+  <span class="property">"id"</span>: <span class="string">"mesh_f5e4d3c2"</span>,
+  <span class="property">"status"</span>: <span class="string">"completed"</span>,
+  <span class="property">"download_url"</span>: <span class="string">"https://cdn.toolsthatwork.dev/m/f5e4d3c2.zip"</span>,
+  <span class="property">"file_size"</span>: <span class="number">4521984</span>,
+  <span class="property">"metadata"</span>: {
+    <span class="property">"lod0_tris"</span>: <span class="number">8420</span>,
+    <span class="property">"lod3_tris"</span>: <span class="number">512</span>,
+    <span class="property">"texture_resolution"</span>: <span class="string">"2048x2048"</span>,
+    <span class="property">"format"</span>: <span class="string">"glb"</span>
+  },
+  <span class="property">"preview_url"</span>: <span class="string">"https://cdn.toolsthatwork.dev/p/f5e4d3c2.png"</span>,
+  <span class="property">"created_at"</span>: <span class="string">"2026-04-09T14:30:00Z"</span>
+}</div>
+        </div>
+      </div>
+
+      <div class="endpoint" id="meshready-catalog">
+        <div class="endpoint-header">
+          <span class="endpoint-method method-get" style="background: rgba(0,206,201,0.15); color: var(--secondary);">GET</span>
+          <span class="endpoint-path">/v1/mesh/catalog</span>
+        </div>
+        <p>Browse the pre-generated asset catalog. These assets are available instantly with no generation wait time.</p>
+        <h3>Query Parameters</h3>
+        <table class="error-table">
+          <thead><tr><th>Param</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>category</td><td>string</td><td>"props", "nature", "weapons", "architecture", "vehicles"</td></tr>
+            <tr><td>search</td><td>string</td><td>Search by keyword (e.g., "barrel", "tree")</td></tr>
+            <tr><td>page</td><td>integer</td><td>Page number (default: 1)</td></tr>
+            <tr><td>per_page</td><td>integer</td><td>Results per page (default: 20, max: 100)</td></tr>
+          </tbody>
+        </table>
+        <h3>Response (200 OK)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>JSON</span></div>
+          <div class="code-content">{
+  <span class="property">"total"</span>: <span class="number">523</span>,
+  <span class="property">"page"</span>: <span class="number">1</span>,
+  <span class="property">"per_page"</span>: <span class="number">20</span>,
+  <span class="property">"assets"</span>: [
+    {
+      <span class="property">"id"</span>: <span class="string">"cat_barrel_001"</span>,
+      <span class="property">"name"</span>: <span class="string">"Wooden Barrel"</span>,
+      <span class="property">"category"</span>: <span class="string">"props"</span>,
+      <span class="property">"preview_url"</span>: <span class="string">"https://cdn.toolsthatwork.dev/catalog/barrel_001.png"</span>,
+      <span class="property">"download_url"</span>: <span class="string">"https://cdn.toolsthatwork.dev/catalog/barrel_001.zip"</span>
+    }
+  ]
+}</div>
+        </div>
+      </div>
+
+      <div style="height: 80px;"></div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>
