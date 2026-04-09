@@ -1,412 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tools That Actually Work — Productivity, AI, Wellness, Music & Income Tools</title>
-  <meta name="description" content="Curated productivity tools, AI software, mental wellness resources, passive income strategies, and 12 YouTube channels. Free digital planners, journals, and templates." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://toolsthatwork.github.io/" />
-  <meta property="og:title" content="Tools That Actually Work — Free Resources & Curated Tools" />
-  <meta property="og:description" content="Curated tools, 12 YouTube channels, free planners, and passive income resources. Everything you need in one place." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://toolsthatwork.github.io/" />
-  <meta name="keywords" content="productivity tools, AI tools, lofi music, study music, rain sounds, passive income, free planner, anxiety journal, habit tracker, synthwave, jazz music, epic music" />
-  <style>
-    :root {
-      --bg:      #0f1117;
-      --surface: #1a1d27;
-      --border:  #2a2d3a;
-      --accent:  #7c6af7;
-      --accent2: #4fd1c5;
-      --text:    #e2e8f0;
-      --muted:   #8892a4;
-      --badge:   #252839;
-      --red:     #e94560;
-      --gold:    #f5c842;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg); color: var(--text);
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      font-size: 16px; line-height: 1.6;
-      padding: 2rem 1rem 4rem;
-    }
-    .container { max-width: 720px; margin: 0 auto; }
-    header { text-align: center; padding: 3rem 0 1.5rem; }
-    header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: .5rem; }
-    header p { color: var(--muted); max-width: 520px; margin: 0 auto; font-size: .95rem; }
-    .hero-stats {
-      display: flex; justify-content: center; gap: 2rem;
-      margin: 1.5rem 0; flex-wrap: wrap;
-    }
-    .hero-stat {
-      text-align: center;
-    }
-    .hero-stat .num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
-    .hero-stat .label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-    .disclaimer {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: .75rem 1rem; font-size: .8rem;
-      color: var(--muted); margin: 1.5rem 0 2.5rem; text-align: center;
-    }
-    h2 {
-      font-size: .9rem; text-transform: uppercase; letter-spacing: .08em;
-      color: var(--muted); margin: 2.5rem 0 1rem;
-      padding-bottom: .4rem; border-bottom: 1px solid var(--border);
-    }
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: .75rem;
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 1rem; transition: border-color .15s;
-    }
-    .card:hover { border-color: var(--accent); }
-    .card-body { flex: 1; }
-    .card-body strong { font-size: 1rem; display: block; margin-bottom: .1rem; }
-    .card-body em { font-size: .85rem; color: var(--accent2); font-style: normal; display: block; margin-bottom: .3rem; }
-    .card-body p { font-size: .85rem; color: var(--muted); margin-bottom: .4rem; }
-    .commission { font-size: .75rem; color: var(--accent); font-weight: 600; }
-    .badge {
-      font-size: .68rem; padding: .15rem .45rem; border-radius: 4px;
-      background: var(--badge); color: var(--accent2);
-      display: inline-block; margin-bottom: .4rem;
-    }
-    .badge-music { color: var(--gold); }
-    .badge-hot { background: var(--red); color: #fff; }
-    .btn {
-      display: inline-block; padding: .5rem 1rem; background: var(--accent);
-      color: #fff; border-radius: 6px; text-decoration: none;
-      font-size: .8rem; font-weight: 600; white-space: nowrap;
-      flex-shrink: 0; align-self: center; transition: opacity .15s;
-    }
-    .btn:hover { opacity: .85; }
-    .btn-red { background: #cc0000; }
-    .btn-secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
-    .btn-gold { background: var(--gold); color: #000; }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
-    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
-    .section-desc { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
-    footer {
-      margin-top: 4rem; text-align: center; font-size: .78rem; color: var(--muted);
-    }
-    footer a { color: var(--accent); text-decoration: none; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools That Work — AI-Powered APIs for Video, Content & 3D</title>
+  <meta name="description" content="Reliable AI-powered APIs that just work. Video generation, content automation, and 3D asset creation — all through simple API calls.">
+  <meta property="og:title" content="Tools That Work — AI-Powered APIs">
+  <meta property="og:description" content="Video generation, content automation, and 3D asset creation APIs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolsthatwork.dev">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236c5ce7'/><text x='16' y='23' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='system-ui'>T</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>Tools That Actually Work</h1>
-    <p>Curated tools, free resources, and 12 YouTube channels delivering daily content to help you be more productive, less stressed, and financially free.</p>
-  </header>
 
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="num">12</div><div class="label">YouTube Channels</div></div>
-    <div class="hero-stat"><div class="num">48+</div><div class="label">Videos / Day</div></div>
-    <div class="hero-stat"><div class="num">100%</div><div class="label">Free Resources</div></div>
-  </div>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#6c5ce7"/><text x="16" y="23" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">T</text></svg>
+        Tools That Work
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="#">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="clipcraft.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              ClipCraft API
+            </a>
+            <a href="autotube.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              AutoTube
+            </a>
+            <a href="meshready.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              MeshReady API
+            </a>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <div class="disclaimer">
-    Some links are affiliate links. You pay nothing extra — a small commission supports our free content.
-  </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge badge-primary hero-badge">Now in Public Beta</span>
+      <h1>Build Faster with<br><span class="text-gradient">AI-Powered APIs</span></h1>
+      <p>Video generation, content automation, and 3D asset creation — all through simple API calls. Ship in hours, not months.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary btn-lg">View Products</a>
+        <a href="docs.html" class="btn btn-secondary btn-lg">Read the Docs</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- ═══════════════ MUSIC CHANNELS ═══════════════ -->
-  <h2>Music & Ambient Channels — Study, Sleep, Focus</h2>
-  <p class="section-desc">Press play, put on headphones, and let the music carry you. New 1-hour mixes uploaded daily on every channel.</p>
+  <!-- Products Grid -->
+  <section id="products" class="section">
+    <div class="container text-center">
+      <h2 class="fade-in">Three APIs. Infinite Possibilities.</h2>
+      <p class="section-subtitle fade-in">From video generation to 3D asset creation, our APIs handle the heavy lifting so you can focus on building your product.</p>
+      <div class="grid-3">
+        <!-- ClipCraft -->
+        <div class="card fade-in fade-in-delay-1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <h3>ClipCraft API</h3>
+          <p>Turn any topic into a complete video with voiceover, images, music, and captions.</p>
+          <ul>
+            <li>15+ natural AI voices</li>
+            <li>AI-generated backgrounds &amp; thumbnails</li>
+            <li>Shorts + landscape formats</li>
+          </ul>
+          <a href="clipcraft.html" class="btn btn-ghost">Learn More &rarr;</a>
+        </div>
+        <!-- AutoTube -->
+        <div class="card fade-in fade-in-delay-2">
+          <div class="card-icon cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>AutoTube</h3>
+          <p>Launch AI-powered faceless YouTube channels on complete autopilot.</p>
+          <ul>
+            <li>20+ niche templates</li>
+            <li>Auto-upload to YouTube</li>
+            <li>SEO-optimized metadata</li>
+          </ul>
+          <a href="autotube.html" class="btn btn-ghost">Learn More &rarr;</a>
+        </div>
+        <!-- MeshReady -->
+        <div class="card fade-in fade-in-delay-3">
+          <div class="card-icon orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>MeshReady API</h3>
+          <p>Generate game-ready 3D models from text with LODs and PBR textures.</p>
+          <ul>
+            <li>4-level LOD generation</li>
+            <li>PBR texture baking</li>
+            <li>Unity / Unreal / Godot export</li>
+          </ul>
+          <a href="meshready.html" class="btn btn-ghost">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="grid-2">
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-music">Lofi / Chill</span>
-          <strong>ChillCraft Study</strong>
-          <p>Lofi hip hop, ambient, and chill beats for studying, working, and relaxing.</p>
+  <!-- How It Works -->
+  <section class="section" style="background: var(--surface);">
+    <div class="container text-center">
+      <h2 class="fade-in">How It Works</h2>
+      <p class="section-subtitle fade-in">Three steps. That's it.</p>
+      <div class="steps fade-in">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Get Your API Key</h4>
+          <p>Sign up for a free account and generate your API key in seconds.</p>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@ChillCraftStudy" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-music">Piano</span>
-          <strong>GentleKeysDaily</strong>
-          <p>Gentle piano music for mornings, meditation, spa, study, and sleep.</p>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Make a Request</h4>
+          <p>Send a simple JSON payload to any of our endpoints.</p>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@GentleKeysDaily" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-music">Synthwave</span>
-          <strong>MidnightSynthRun</strong>
-          <p>Synthwave, retrowave, and darksynth for driving, coding, and gaming.</p>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Get Results</h4>
+          <p>Receive polished videos, managed channels, or production-ready 3D assets.</p>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@MidnightSynthRun" target="_blank" rel="noopener">Subscribe</a>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-music">Nature / Rain</span>
-          <strong>RainsOnRepeat</strong>
-          <p>Rain, thunderstorms, ocean waves, forest sounds, and campfire for sleep.</p>
+      <div class="code-block fade-in" style="max-width: 700px; margin: 48px auto 0; text-align: left;">
+        <div class="code-header">
+          <span>cURL</span>
+          <button class="code-copy">Copy</button>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@RainsOnRepeat" target="_blank" rel="noopener">Subscribe</a>
+        <div class="code-content"><span class="keyword">curl</span> -X POST https://api.toolsthatwork.dev/v1/video/generate \
+  -H <span class="string">"Authorization: Bearer YOUR_API_KEY"</span> \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{
+    "topic": "Top 5 Productivity Hacks",
+    "style": "educational",
+    "voice": "nova",
+    "format": "landscape"
+  }'</span></div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-music">Jazz / Cafe</span>
-          <strong>LatteBeatsRadio</strong>
-          <p>Smooth jazz, bossa nova, and cafe piano for working and unwinding.</p>
-        </div>
-        <a class="btn btn-red" href="https://youtube.com/@LatteBeatsRadio" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-music">Epic / Cinematic</span>
-          <strong>EpicMomentAndScoreMusic</strong>
-          <p>Epic orchestral, battle themes, and cinematic scores for gaming and motivation.</p>
-        </div>
-        <a class="btn btn-red" href="https://youtube.com/@EpicMomentAndScoreMusic" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-  </div>
+    </div>
+  </section>
 
-  <!-- ═══════════════ TALK CHANNELS ═══════════════ -->
-  <h2>Self-Improvement Channels — Daily Tips & Strategies</h2>
-  <p class="section-desc">Actionable advice backed by science. New videos and Shorts uploaded every single day.</p>
+  <!-- Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="stats fade-in">
+        <div>
+          <div class="stat-number text-gradient">2.4M+</div>
+          <div class="stat-label">API Calls Served</div>
+        </div>
+        <div>
+          <div class="stat-number text-gradient">180K+</div>
+          <div class="stat-label">Videos Generated</div>
+        </div>
+        <div>
+          <div class="stat-number text-gradient">99.9%</div>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <div class="card-body">
-          <span class="badge">Productivity</span>
-          <strong>ProductivityWithPurpose</strong>
-          <p>Time management, deep work strategies, and daily productivity systems that actually work.</p>
+  <!-- Pricing Preview -->
+  <section id="pricing" class="section" style="background: var(--surface);">
+    <div class="container text-center">
+      <h2 class="fade-in">Simple, Transparent Pricing</h2>
+      <p class="section-subtitle fade-in">Start free. Scale as you grow. No hidden fees.</p>
+      <div class="grid-3">
+        <div class="pricing-card fade-in fade-in-delay-1">
+          <h3>Free</h3>
+          <p>For testing and prototyping</p>
+          <div class="price">$0<span>/mo</span></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 50 API calls/month</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> All 3 products</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Community support</li>
+          </ul>
+          <a href="#" class="btn btn-secondary">Get Started Free</a>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@ProductivityWithPurpose" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge">Mental Wellness</span>
-          <strong>AnxietyExitRamp</strong>
-          <p>Science-backed anxiety relief, CBT techniques, breathing exercises, and mental health tips.</p>
+        <div class="pricing-card featured fade-in fade-in-delay-2">
+          <h3>Pro</h3>
+          <p>For growing projects</p>
+          <div class="price">$49<span>/mo</span></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2,000 API calls/month</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Priority processing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Email support</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Start Pro Trial</a>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@AnxietyExitRamp" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge">Habits</span>
-          <strong>HabitHacksForYou</strong>
-          <p>Build habits that stick using proven behavioral science. Daily habit-building tips.</p>
+        <div class="pricing-card fade-in fade-in-delay-3">
+          <h3>Enterprise</h3>
+          <p>For teams and agencies</p>
+          <div class="price">$199<span>/mo</span></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited API calls</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated infrastructure</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Slack + priority support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Contact Sales</a>
         </div>
-        <a class="btn btn-red" href="https://youtube.com/@HabitHacksForYou" target="_blank" rel="noopener">Subscribe</a>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge">Passive Income</span>
-          <strong>PassiveIncomePlaybook</strong>
-          <p>Real passive income strategies, side hustles, KDP, print on demand, and financial freedom.</p>
-        </div>
-        <a class="btn btn-red" href="https://youtube.com/@PassiveIncomePlaybook" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge">AI & Tech</span>
-          <strong>AIToolsUnboxedNow</strong>
-          <p>Daily AI tool reviews, automation tutorials, and workflows to save you hours every week.</p>
-        </div>
-        <a class="btn btn-red" href="https://youtube.com/@AIToolsUnboxedNow" target="_blank" rel="noopener">Subscribe</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge">Facts & Science</span>
-          <strong>BestMindBlownDaily</strong>
-          <p>Mind-blowing facts about science, history, space, nature, and the human body.</p>
-        </div>
-        <a class="btn btn-red" href="https://youtube.com/@BestMindBlownDaily" target="_blank" rel="noopener">Subscribe</a>
-      </div>
+      <p style="margin-top: 32px;"><a href="pricing.html" class="btn btn-ghost">See full pricing details &rarr;</a></p>
+    </div>
+  </section>
 
-  <!-- ═══════════════ TOOLS ═══════════════ -->
-  <h2>Best Business & Productivity Tools</h2>
-  <p class="section-desc">Every tool here has been tested. We only recommend what actually works.</p>
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="fade-in">Ready to Build?</h2>
+      <p class="section-subtitle fade-in">Get your free API key and start building in minutes.</p>
+      <div class="cta-form fade-in">
+        <input type="email" placeholder="Enter your email" aria-label="Email address">
+        <button class="btn btn-primary">Get API Key</button>
+      </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-hot">60% commission</span>
-          <strong>Systeme.io</strong>
-          <em>Build your entire online business for free</em>
-          <p>Sales funnels, email marketing, course hosting, affiliate management, and blogging. Generous free plan.</p>
-          <span class="commission">60% recurring commission</span>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect width="32" height="32" rx="6" fill="#6c5ce7"/><text x="16" y="23" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">T</text></svg>
+            Tools That Work
+          </a>
+          <p>Reliable AI-powered APIs for video, content automation, and 3D assets. Built to just work.</p>
         </div>
-        <a class="btn" href="https://systeme.io/?sa=sa026811915595e130daa916b24b27c0a42cc746ee" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-hot">50% commission</span>
-          <strong>Kit (ConvertKit)</strong>
-          <em>Email marketing built for creators</em>
-          <p>Simple, powerful email marketing. Free up to 10,000 subscribers. Perfect for newsletters.</p>
-          <span class="commission">50% for 12 months</span>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="clipcraft.html">ClipCraft API</a>
+          <a href="autotube.html">AutoTube</a>
+          <a href="meshready.html">MeshReady API</a>
         </div>
-        <a class="btn" href="https://kit.com/" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-hot">50% commission</span>
-          <strong>Leadpages</strong>
-          <em>Landing pages that actually convert</em>
-          <p>Drag-and-drop builder with A/B testing, pop-ups, and conversion analytics built in.</p>
-          <span class="commission">50% recurring</span>
+        <div class="footer-col">
+          <h4>Developers</h4>
+          <a href="docs.html">Documentation</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="#">API Status</a>
+          <a href="#">Changelog</a>
         </div>
-        <a class="btn" href="https://www.leadpages.com/" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-hot">50% commission</span>
-          <strong>Webflow</strong>
-          <em>Professional websites without code</em>
-          <p>Visual web design with CMS, hosting, and e-commerce. Used by top designers worldwide.</p>
-          <span class="commission">50% for 12 months</span>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
         </div>
-        <a class="btn" href="https://webflow.com/" target="_blank" rel="noopener sponsored">Try it free</a>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Moosend</strong>
-          <em>Email automation without the enterprise price</em>
-          <p>Full-featured email marketing with automation, landing pages, and analytics.</p>
-          <span class="commission">40% recurring</span>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Tools That Work. All rights reserved.</span>
+        <div>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
         </div>
-        <a class="btn" href="https://moosend.com/" target="_blank" rel="noopener sponsored">Try it free</a>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>HubSpot</strong>
-          <em>Free CRM that scales with your business</em>
-          <p>All-in-one platform for email marketing, CRM, landing pages, and automation.</p>
-          <span class="commission">30% recurring</span>
-        </div>
-        <a class="btn" href="https://www.hubspot.com/" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>monday.com</strong>
-          <em>The work OS that runs your business</em>
-          <p>Visual project management used by 180,000+ companies. Flexible for any workflow.</p>
-          <span class="commission">30% recurring</span>
-        </div>
-        <a class="btn" href="https://monday.com/" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Zapier</strong>
-          <em>Connect your apps. Automate everything.</em>
-          <p>If two apps exist, Zapier can connect them. Saves hours every week on repetitive tasks.</p>
-          <span class="commission">25% recurring</span>
-        </div>
-        <a class="btn" href="https://zapier.com/" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>ClickUp</strong>
-          <em>One app to replace them all</em>
-          <p>Project management, docs, goals, time tracking, and dashboards. Free to start.</p>
-          <span class="commission">20% recurring</span>
-        </div>
-        <a class="btn" href="https://clickup.com/" target="_blank" rel="noopener sponsored">Try it free</a>
-      </div>
-
-  <!-- ═══════════════ AMAZON PICKS ═══════════════ -->
-  <h2>Top Picks on Amazon</h2>
-  <p class="section-desc">Gear we use and recommend. Every link supports our free content.</p>
-
-  <div class="grid-2">
-      <div class="card">
-        <div class="card-body">
-          <strong>Noise-Cancelling Headphones</strong>
-          <p>Essential for focus, studying, and music.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=noise+cancelling+headphones&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Standing Desk</strong>
-          <p>Boost energy and productivity all day.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=standing+desk&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Weighted Blanket</strong>
-          <p>Better sleep, less anxiety. Life changer.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=weighted+blanket&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>LED Desk Lamp</strong>
-          <p>Perfect lighting for late-night study sessions.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=led+desk+lamp+study&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Ergonomic Chair</strong>
-          <p>Your back will thank you. Worth every penny.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=ergonomic+desk+chair&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>White Noise Machine</strong>
-          <p>Sleep deeper. Block out distractions.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=white+noise+machine&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Atomic Habits (Book)</strong>
-          <p>The #1 book on building better habits.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=atomic+habits+james+clear&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>RGB LED Strip Lights</strong>
-          <p>Set the vibe. Perfect for synthwave nights.</p>
-        </div>
-        <a class="btn btn-gold" href="https://www.amazon.com/s?k=rgb+led+strip+lights+room&tag=toolsthatwork-20" target="_blank" rel="noopener sponsored">Shop</a>
-      </div>
-  </div>
-
-  <!-- ═══════════════ DIGITAL PRODUCTS ═══════════════ -->
-  <h2>Our Digital Products</h2>
-  <p class="section-desc">Instant downloads. Designed by us, tested by thousands.</p>
-
-      <div class="card">
-        <div class="card-body">
-          <span class="badge badge-hot">Best Seller</span>
-          <strong>90-Day Productivity System</strong>
-          <em>$7.99 — Instant Download</em>
-          <p>Complete printable productivity planner with daily, weekly, and monthly templates.</p>
-        </div>
-        <a class="btn" href="https://frenchauto.gumroad.com/l/zmray" target="_blank" rel="noopener">Get it now</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Daily Planning System</strong>
-          <em>$7.99 — Instant Download</em>
-          <p>Undated daily planner with time blocks, priorities, gratitude prompts, and evening review.</p>
-        </div>
-        <a class="btn" href="https://frenchauto.gumroad.com/l/bdwmia" target="_blank" rel="noopener">Get it now</a>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <strong>Anxiety Relief Toolkit</strong>
-          <em>$9.99 — Instant Download</em>
-          <p>Evidence-based CBT workbook with breathing guides, thought records, and daily mood tracking.</p>
-        </div>
-        <a class="btn" href="https://frenchauto.gumroad.com/l/zvfmu" target="_blank" rel="noopener">Get it now</a>
-      </div>
-
-  <footer>
-    &copy; <span id="yr"></span> Tools That Work<br>
-    <a href="https://frenchauto.gumroad.com/">Gumroad</a> &middot;
-    <a href="privacy.html">Privacy Policy</a>
+    </div>
   </footer>
-</div>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+
+  <script src="js/main.js"></script>
+  <script src="js/pricing.js"></script>
 </body>
 </html>
