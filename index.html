@@ -3,435 +3,431 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tools That Work — Link Hub</title>
-  <meta name="description" content="YouTube channels, digital stores, stock portfolios and affiliate partners.">
+  <title>Tools That Work</title>
+  <meta name="description" content="Passive income, automated. YouTube channels, digital stores and tools we actually use.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236c5ce7'/><text x='16' y='23' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='system-ui'>T</text></svg>">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:       #080a0f;
+      --surface:  #0f1117;
+      --card:     #141720;
+      --border:   #1e2130;
+      --text:     #e8eaf0;
+      --muted:    #4a5068;
+      --accent:   #7c6ff7;
+      --green:    #22c55e;
+      --yellow:   #f59e0b;
+      --blue:     #38bdf8;
+    }
+
     body {
-      background: #0d0f14;
-      color: #e2e8f0;
-      font-family: system-ui, "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       min-height: 100vh;
-      padding: 40px 16px 56px;
+      padding: 48px 16px 72px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 680px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    /* ── Profile header ── */
+    /* ── Profile ── */
     .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
-    .logo {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      background: #6c5ce7;
-      display: flex;
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.1rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: #fff;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       letter-spacing: -1px;
-      flex-shrink: 0;
     }
 
     .profile h1 {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: #f1f5f9;
+      color: #fff;
+      letter-spacing: -0.3px;
       margin-bottom: 6px;
     }
 
-    .profile .tagline {
-      font-size: 0.87rem;
-      color: #64748b;
+    .profile p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      letter-spacing: 0.01em;
     }
 
-    /* ── Group titles ── */
-    .group-title {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #64748b;
-      margin-top: 28px;
-      margin-bottom: 10px;
-    }
-
-    .sub-group-title {
+    /* ── Section label ── */
+    .label {
       font-size: 0.65rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #374151;
-      margin-top: 12px;
-      margin-bottom: 8px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 10px;
+      margin-top: 32px;
+      padding-left: 2px;
     }
 
-    /* ── Link cards ── */
-    .link-card {
-      width: 100%;
-      background: #1a1d27;
-      border: 1px solid #2a2d3a;
-      border-radius: 10px;
-      padding: 14px 18px;
+    .sub-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #2a2f45;
+      margin-bottom: 8px;
+      margin-top: 14px;
+      padding-left: 2px;
+    }
+
+    /* ── Card ── */
+    .card {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 13px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 16px;
+      margin-bottom: 7px;
       text-decoration: none;
-      color: #e2e8f0;
-      transition: border-color 0.15s, background 0.15s;
+      color: var(--text);
+      transition: background 0.12s, border-color 0.12s, transform 0.1s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .link-card:hover {
-      border-color: rgba(99, 102, 241, 0.5);
-      background: #1e2133;
+    .card:hover {
+      background: #181b26;
+      border-color: rgba(124,111,247,0.35);
+      transform: translateY(-1px);
     }
 
-    .link-card .icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       flex-shrink: 0;
     }
 
-    .link-card .info {
+    .card-body {
       flex: 1;
       min-width: 0;
     }
 
-    .link-card .info .name {
+    .card-name {
+      font-size: 0.88rem;
       font-weight: 600;
-      font-size: 0.92rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 7px;
     }
 
-    .link-card .info .sub {
+    .card-sub {
       font-size: 0.72rem;
-      color: #64748b;
+      color: var(--muted);
       margin-top: 2px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .link-card .arrow {
-      margin-left: auto;
-      color: #64748b;
-      font-size: 0.9rem;
+    .card-arrow {
+      color: var(--muted);
+      font-size: 1rem;
       flex-shrink: 0;
+      opacity: 0.5;
     }
 
-    /* ── YouTube 2-col grid ── */
+    /* ── Badge ── */
+    .badge {
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .badge-green  { background: rgba(34,197,94,0.12);  color: var(--green); }
+    .badge-yellow { background: rgba(245,158,11,0.12); color: var(--yellow); }
+    .badge-blue   { background: rgba(56,189,248,0.12); color: var(--blue); }
+    .badge-purple { background: rgba(124,111,247,0.12); color: var(--accent); }
+
+    /* ── Support cards (special style) ── */
+    .support-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 7px;
+    }
+
+    .support-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.12s, border-color 0.12s, transform 0.1s;
+    }
+
+    .support-card:hover {
+      background: #181b26;
+      border-color: rgba(124,111,247,0.35);
+      transform: translateY(-1px);
+    }
+
+    .support-card .s-icon { font-size: 1.4rem; }
+    .support-card .s-name { font-size: 0.82rem; font-weight: 700; color: #fff; }
+    .support-card .s-sub  { font-size: 0.68rem; color: var(--muted); }
+
+    /* ── YouTube grid ── */
     .yt-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 7px;
     }
 
-    .yt-grid .link-card {
-      margin-bottom: 0;
-    }
+    .yt-grid .card { margin-bottom: 0; }
 
-    @media (max-width: 480px) {
-      .yt-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ── Colored dot ── */
+    /* ── Dot ── */
     .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 8px; height: 8px;
       border-radius: 50%;
+      flex-shrink: 0;
     }
 
-    .dot-purple { background: #6c5ce7; }
-    .dot-blue   { background: #38bdf8; }
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 28px 0;
+      opacity: 0.5;
+    }
 
     /* ── Footer ── */
     footer {
       text-align: center;
-      margin-top: 48px;
-      font-size: 0.75rem;
-      color: #475569;
+      margin-top: 56px;
+      font-size: 0.7rem;
+      color: #2a2f45;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 480px) {
+      .yt-grid { grid-template-columns: 1fr; }
+      .support-row { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- Profile header -->
+    <!-- Profile -->
     <div class="profile">
-      <div class="logo">T</div>
+      <div class="avatar">T</div>
       <h1>Tools That Work</h1>
-      <p class="tagline">Passive income, automated.</p>
+      <p>Passive income, automated.</p>
     </div>
+
+    <!-- Support -->
+    <div class="label">Support the work</div>
+    <div class="support-row">
+      <a class="support-card" href="https://buymeacoffee.com/toolsthatwork" target="_blank" rel="noopener">
+        <span class="s-icon">☕</span>
+        <span class="s-name">Buy Me a Coffee</span>
+        <span class="s-sub">One-time tip</span>
+      </a>
+      <a class="support-card" href="https://ko-fi.com/toolsthatwork" target="_blank" rel="noopener">
+        <span class="s-icon">💙</span>
+        <span class="s-name">Ko-fi</span>
+        <span class="s-sub">One-time tip</span>
+      </a>
+    </div>
+
+    <div class="divider"></div>
 
     <!-- YouTube Channels -->
-    <div class="group-title">📺 YouTube Channels</div>
+    <div class="label">📺 YouTube Channels</div>
 
-    <div class="sub-group-title">Talk Channels</div>
+    <div class="sub-label">Talk</div>
     <div class="yt-grid">
-      <a class="link-card" href="https://youtube.com/@productivitywithpurpose" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(99,102,241,0.15);">
-          <span class="dot dot-purple"></span>
+      <a class="card" href="https://youtube.com/@productivitywithpurpose" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(124,111,247,0.1);"><span class="dot" style="background:#7c6ff7;"></span></div>
+        <div class="card-body">
+          <div class="card-name">ProductivityWithPurpose</div>
+          <div class="card-sub">Systems &amp; deep work</div>
         </div>
-        <div class="info">
-          <div class="name">ProductivityWithPurpose</div>
-          <div class="sub">Productivity systems &amp; deep work</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@anxietyexitramp" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(99,102,241,0.15);">
-          <span class="dot dot-purple"></span>
+      <a class="card" href="https://youtube.com/@anxietyexitramp" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(124,111,247,0.1);"><span class="dot" style="background:#7c6ff7;"></span></div>
+        <div class="card-body">
+          <div class="card-name">AnxietyExitRamp</div>
+          <div class="card-sub">Calm &amp; resilience</div>
         </div>
-        <div class="info">
-          <div class="name">AnxietyExitRamp</div>
-          <div class="sub">Calm anxiety, build resilience</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@habithacksforyou" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(99,102,241,0.15);">
-          <span class="dot dot-purple"></span>
+      <a class="card" href="https://youtube.com/@habithacksforyou" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(124,111,247,0.1);"><span class="dot" style="background:#7c6ff7;"></span></div>
+        <div class="card-body">
+          <div class="card-name">HabitHacksForYou</div>
+          <div class="card-sub">Small habits, big results</div>
         </div>
-        <div class="info">
-          <div class="name">HabitHacksForYou</div>
-          <div class="sub">Small habits, big results</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@passiveincomeplaybook-t2q" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(99,102,241,0.15);">
-          <span class="dot dot-purple"></span>
+      <a class="card" href="https://youtube.com/@passiveincomeplaybook-t2q" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(124,111,247,0.1);"><span class="dot" style="background:#7c6ff7;"></span></div>
+        <div class="card-body">
+          <div class="card-name">PassiveIncomePlaybook</div>
+          <div class="card-sub">Income strategies</div>
         </div>
-        <div class="info">
-          <div class="name">PassiveIncomePlaybook</div>
-          <div class="sub">Passive income strategies</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@aitoolsunboxednow" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(99,102,241,0.15);">
-          <span class="dot dot-purple"></span>
+      <a class="card" href="https://youtube.com/@aitoolsunboxednow" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(124,111,247,0.1);"><span class="dot" style="background:#7c6ff7;"></span></div>
+        <div class="card-body">
+          <div class="card-name">AIToolsUnboxedNow</div>
+          <div class="card-sub">AI tools reviewed</div>
         </div>
-        <div class="info">
-          <div class="name">AIToolsUnboxedNow</div>
-          <div class="sub">AI tools reviewed &amp; explained</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@bestmindblowndaily" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(99,102,241,0.15);">
-          <span class="dot dot-purple"></span>
+      <a class="card" href="https://youtube.com/@bestmindblowndaily" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(124,111,247,0.1);"><span class="dot" style="background:#7c6ff7;"></span></div>
+        <div class="card-body">
+          <div class="card-name">BestMindBlownDaily</div>
+          <div class="card-sub">Mind-expanding facts</div>
         </div>
-        <div class="info">
-          <div class="name">BestMindBlownDaily</div>
-          <div class="sub">Mind-expanding facts daily</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
     </div>
 
-    <div class="sub-group-title" style="margin-top:16px;">Music Channels</div>
+    <div class="sub-label" style="margin-top:16px;">Music</div>
     <div class="yt-grid">
-      <a class="link-card" href="https://youtube.com/@chillcraftstudy" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(56,189,248,0.15);">
-          <span class="dot dot-blue"></span>
+      <a class="card" href="https://youtube.com/@chillcraftstudy" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(56,189,248,0.1);"><span class="dot" style="background:#38bdf8;"></span></div>
+        <div class="card-body">
+          <div class="card-name">ChillCraft Study</div>
+          <div class="card-sub">Lofi &amp; focus beats</div>
         </div>
-        <div class="info">
-          <div class="name">ChillCraft Study</div>
-          <div class="sub">Lofi beats for focus</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@gentlekeysdaily" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(56,189,248,0.15);">
-          <span class="dot dot-blue"></span>
+      <a class="card" href="https://youtube.com/@gentlekeysdaily" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(56,189,248,0.1);"><span class="dot" style="background:#38bdf8;"></span></div>
+        <div class="card-body">
+          <div class="card-name">GentleKeysDaily</div>
+          <div class="card-sub">Soft piano</div>
         </div>
-        <div class="info">
-          <div class="name">GentleKeysDaily</div>
-          <div class="sub">Soft piano for relaxation</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@midnightsynthrun" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(56,189,248,0.15);">
-          <span class="dot dot-blue"></span>
+      <a class="card" href="https://youtube.com/@midnightsynthrun" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(56,189,248,0.1);"><span class="dot" style="background:#38bdf8;"></span></div>
+        <div class="card-body">
+          <div class="card-name">MidnightSynthRun</div>
+          <div class="card-sub">Synthwave nights</div>
         </div>
-        <div class="info">
-          <div class="name">MidnightSynthRun</div>
-          <div class="sub">Synthwave for late nights</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@rainsonrepeat" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(56,189,248,0.15);">
-          <span class="dot dot-blue"></span>
+      <a class="card" href="https://youtube.com/@rainsonrepeat" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(56,189,248,0.1);"><span class="dot" style="background:#38bdf8;"></span></div>
+        <div class="card-body">
+          <div class="card-name">RainsOnRepeat</div>
+          <div class="card-sub">Rain &amp; sleep sounds</div>
         </div>
-        <div class="info">
-          <div class="name">RainsOnRepeat</div>
-          <div class="sub">Rain sounds for sleep</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@lattebeatsradio" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(56,189,248,0.15);">
-          <span class="dot dot-blue"></span>
+      <a class="card" href="https://youtube.com/@lattebeatsradio" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(56,189,248,0.1);"><span class="dot" style="background:#38bdf8;"></span></div>
+        <div class="card-body">
+          <div class="card-name">LatteBeatsRadio</div>
+          <div class="card-sub">Jazz &amp; bossa nova</div>
         </div>
-        <div class="info">
-          <div class="name">LatteBeatsRadio</div>
-          <div class="sub">Jazz &amp; bossa nova vibes</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
-      <a class="link-card" href="https://youtube.com/@epicmomentandscoremusic" target="_blank" rel="noopener">
-        <div class="icon" style="background:rgba(56,189,248,0.15);">
-          <span class="dot dot-blue"></span>
+      <a class="card" href="https://youtube.com/@epicmomentandscoremusic" target="_blank" rel="noopener">
+        <div class="card-icon" style="background:rgba(56,189,248,0.1);"><span class="dot" style="background:#38bdf8;"></span></div>
+        <div class="card-body">
+          <div class="card-name">EpicMomentAndScoreMusic</div>
+          <div class="card-sub">Cinematic scores</div>
         </div>
-        <div class="info">
-          <div class="name">EpicMomentAndScoreMusic</div>
-          <div class="sub">Cinematic &amp; epic scores</div>
-        </div>
-        <span class="arrow">›</span>
       </a>
     </div>
 
-    <!-- Our Stores -->
-    <div class="group-title">🛍️ Our Stores</div>
+    <div class="divider"></div>
 
-    <a class="link-card" href="https://app.gumroad.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(34,197,94,0.15);">🛒</div>
-      <div class="info">
-        <div class="name">Gumroad</div>
-        <div class="sub">Digital products — planners, templates &amp; guides</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://etsy.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(34,197,94,0.15);">🏪</div>
-      <div class="info">
-        <div class="name">Etsy</div>
-        <div class="sub">Printable downloads &amp; digital art</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://payhip.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(34,197,94,0.15);">📦</div>
-      <div class="info">
-        <div class="name">Payhip</div>
-        <div class="sub">Digital products &amp; courses</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
+    <!-- Stores -->
+    <div class="label">🛍️ Digital Stores</div>
 
-    <!-- Stock Portfolios -->
-    <div class="group-title">📸 Stock Portfolios</div>
+    <a class="card" href="https://app.gumroad.com" target="_blank" rel="noopener">
+      <div class="card-icon" style="background:rgba(34,197,94,0.1);">🛒</div>
+      <div class="card-body">
+        <div class="card-name">Gumroad</div>
+        <div class="card-sub">Planners, templates &amp; digital guides</div>
+      </div>
+      <span class="card-arrow">›</span>
+    </a>
+    <a class="card" href="https://payhip.com" target="_blank" rel="noopener">
+      <div class="card-icon" style="background:rgba(34,197,94,0.1);">📦</div>
+      <div class="card-body">
+        <div class="card-name">Payhip</div>
+        <div class="card-sub">Digital products &amp; courses</div>
+      </div>
+      <span class="card-arrow">›</span>
+    </a>
+    <div class="card" style="cursor:default;opacity:0.5;">
+      <div class="card-icon" style="background:rgba(245,158,11,0.1);">🏪</div>
+      <div class="card-body">
+        <div class="card-name">
+          Etsy
+          <span class="badge badge-yellow">Coming Soon</span>
+        </div>
+        <div class="card-sub">Printable downloads &amp; digital art</div>
+      </div>
+    </div>
 
-    <a class="link-card" href="https://contributor.stock.adobe.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(56,189,248,0.15);">🎨</div>
-      <div class="info">
-        <div class="name">Adobe Stock</div>
-        <div class="sub">AI-generated stock images</div>
+    <div class="divider"></div>
+
+    <!-- Affiliate -->
+    <div class="label">🤝 Recommended Tools</div>
+
+    <a class="card" href="https://systeme.io/?sa=sa026811915595e130daa916b24b27c0a42cc746ee" target="_blank" rel="noopener">
+      <div class="card-icon" style="background:rgba(34,197,94,0.1);">🏗️</div>
+      <div class="card-body">
+        <div class="card-name">
+          Systeme.io
+          <span class="badge badge-green">60% recurring</span>
+        </div>
+        <div class="card-sub">Build your entire online business — free plan available</div>
       </div>
-      <span class="arrow">›</span>
+      <span class="card-arrow">›</span>
     </a>
-    <a class="link-card" href="https://www.shutterstock.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(56,189,248,0.15);">📷</div>
-      <div class="info">
-        <div class="name">Shutterstock</div>
-        <div class="sub">Photography &amp; illustrations</div>
+    <a class="card" href="https://www.amazon.com/?tag=toolsthatw09e-20" target="_blank" rel="noopener">
+      <div class="card-icon" style="background:rgba(245,158,11,0.1);">📦</div>
+      <div class="card-body">
+        <div class="card-name">
+          Amazon
+          <span class="badge badge-yellow">4–8% back</span>
+        </div>
+        <div class="card-sub">Shop Amazon — we earn a small commission at no cost to you</div>
       </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://www.dreamstime.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(56,189,248,0.15);">🖼️</div>
-      <div class="info">
-        <div class="name">Dreamstime</div>
-        <div class="sub">Stock photography portfolio</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://www.123rf.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(56,189,248,0.15);">📸</div>
-      <div class="info">
-        <div class="name">123RF</div>
-        <div class="sub">Creative stock assets</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://www.alamy.com" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(56,189,248,0.15);">🏔️</div>
-      <div class="info">
-        <div class="name">Alamy</div>
-        <div class="sub">High-res stock photography</div>
-      </div>
-      <span class="arrow">›</span>
+      <span class="card-arrow">›</span>
     </a>
 
-    <!-- Support Us -->
-    <div class="group-title">☕ Support Us</div>
-
-    <a class="link-card" href="https://buymeacoffee.com/toolsthatwork" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(251,191,36,0.15);">☕</div>
-      <div class="info">
-        <div class="name">Buy Me a Coffee</div>
-        <div class="sub">Support the work — one coffee at a time</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://ko-fi.com/toolsthatwork" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(29,161,242,0.15);">💙</div>
-      <div class="info">
-        <div class="name">Ko-fi</div>
-        <div class="sub">Buy us a Ko-fi — no subscription needed</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-
-    <!-- Affiliate Partners -->
-    <div class="group-title">🤝 Affiliate Partners — tools we actually use</div>
-
-    <a class="link-card" href="https://www.amazon.com/?tag=toolsthatw09e-20" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(255,153,0,0.15);">📦</div>
-      <div class="info">
-        <div class="name">Amazon <span style="font-size:.65rem;color:#f59e0b;font-weight:700;margin-left:4px;">4–8% commission</span></div>
-        <div class="sub">Shop Amazon — we earn a small commission</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-    <a class="link-card" href="https://systeme.io/?sa=sa026811915595e130daa916b24b27c0a42cc746ee" target="_blank" rel="noopener">
-      <div class="icon" style="background:rgba(245,158,11,0.15);">🏗️</div>
-      <div class="info">
-        <div class="name">Systeme.io <span style="font-size:.65rem;color:#22c55e;font-weight:700;margin-left:4px;">60% recurring</span></div>
-        <div class="sub">Build your entire online business for free</div>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-
-    <p style="font-size:.7rem;color:#475569;text-align:center;margin-top:16px;font-style:italic;">Some links are affiliate links — we earn a small commission at no extra cost to you.</p>
+    <p style="font-size:.67rem;color:#2a2f45;text-align:center;margin-top:14px;">Affiliate links — we only recommend tools we use.</p>
 
     <footer>© 2026 Tools That Work</footer>
 
