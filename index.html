@@ -2,338 +2,439 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tools That Work — AI-Powered APIs for Video, Content & 3D</title>
-  <meta name="description" content="Reliable AI-powered APIs that just work. Video generation, content automation, and 3D asset creation — all through simple API calls.">
-  <meta property="og:title" content="Tools That Work — AI-Powered APIs">
-  <meta property="og:description" content="Video generation, content automation, and 3D asset creation APIs.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://toolsthatwork.dev">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools That Work — Link Hub</title>
+  <meta name="description" content="YouTube channels, digital stores, stock portfolios and affiliate partners.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236c5ce7'/><text x='16' y='23' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='system-ui'>T</text></svg>">
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d0f14;
+      color: #e2e8f0;
+      font-family: system-ui, "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 40px 16px 56px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ── Profile header ── */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #6c5ce7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+
+    .profile h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+
+    .profile .tagline {
+      font-size: 0.87rem;
+      color: #64748b;
+    }
+
+    /* ── Group titles ── */
+    .group-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    .sub-group-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #374151;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    /* ── Link cards ── */
+    .link-card {
+      width: 100%;
+      background: #1a1d27;
+      border: 1px solid #2a2d3a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: #e2e8f0;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .link-card:hover {
+      border-color: rgba(99, 102, 241, 0.5);
+      background: #1e2133;
+    }
+
+    .link-card .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .link-card .info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .link-card .info .name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .link-card .info .sub {
+      font-size: 0.72rem;
+      color: #64748b;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .link-card .arrow {
+      margin-left: auto;
+      color: #64748b;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* ── YouTube 2-col grid ── */
+    .yt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .yt-grid .link-card {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 480px) {
+      .yt-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Colored dot ── */
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-purple { background: #6c5ce7; }
+    .dot-blue   { background: #38bdf8; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.75rem;
+      color: #475569;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#6c5ce7"/><text x="16" y="23" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">T</text></svg>
-        Tools That Work
+    <!-- Profile header -->
+    <div class="profile">
+      <div class="logo">T</div>
+      <h1>Tools That Work</h1>
+      <p class="tagline">Passive income, automated.</p>
+    </div>
+
+    <!-- YouTube Channels -->
+    <div class="group-title">📺 YouTube Channels</div>
+
+    <div class="sub-group-title">Talk Channels</div>
+    <div class="yt-grid">
+      <a class="link-card" href="https://youtube.com/@productivitywithpurpose" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(99,102,241,0.15);">
+          <span class="dot dot-purple"></span>
+        </div>
+        <div class="info">
+          <div class="name">ProductivityWithPurpose</div>
+          <div class="sub">Productivity systems &amp; deep work</div>
+        </div>
+        <span class="arrow">›</span>
       </a>
-      <div class="nav-links">
-        <div class="nav-dropdown">
-          <a href="#">Products ▾</a>
-          <div class="nav-dropdown-menu">
-            <a href="clipcraft.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              ClipCraft API
-            </a>
-            <a href="autotube.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              AutoTube
-            </a>
-            <a href="meshready.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              MeshReady API
-            </a>
-          </div>
+      <a class="link-card" href="https://youtube.com/@anxietyexitramp" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(99,102,241,0.15);">
+          <span class="dot dot-purple"></span>
         </div>
-        <a href="pricing.html">Pricing</a>
-        <a href="docs.html">Docs</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+        <div class="info">
+          <div class="name">AnxietyExitRamp</div>
+          <div class="sub">Calm anxiety, build resilience</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@habithacksforyou" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(99,102,241,0.15);">
+          <span class="dot dot-purple"></span>
+        </div>
+        <div class="info">
+          <div class="name">HabitHacksForYou</div>
+          <div class="sub">Small habits, big results</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@passiveincomeplaybook-t2q" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(99,102,241,0.15);">
+          <span class="dot dot-purple"></span>
+        </div>
+        <div class="info">
+          <div class="name">PassiveIncomePlaybook</div>
+          <div class="sub">Passive income strategies</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@aitoolsunboxednow" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(99,102,241,0.15);">
+          <span class="dot dot-purple"></span>
+        </div>
+        <div class="info">
+          <div class="name">AIToolsUnboxedNow</div>
+          <div class="sub">AI tools reviewed &amp; explained</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@bestmindblowndaily" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(99,102,241,0.15);">
+          <span class="dot dot-purple"></span>
+        </div>
+        <div class="info">
+          <div class="name">BestMindBlownDaily</div>
+          <div class="sub">Mind-expanding facts daily</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <span class="badge badge-primary hero-badge">Now in Public Beta</span>
-      <h1>Build Faster with<br><span class="text-gradient">AI-Powered APIs</span></h1>
-      <p>Video generation, content automation, and 3D asset creation — all through simple API calls. Ship in hours, not months.</p>
-      <div class="hero-actions">
-        <a href="#products" class="btn btn-primary btn-lg">View Products</a>
-        <a href="docs.html" class="btn btn-secondary btn-lg">Read the Docs</a>
-      </div>
+    <div class="sub-group-title" style="margin-top:16px;">Music Channels</div>
+    <div class="yt-grid">
+      <a class="link-card" href="https://youtube.com/@chillcraftstudy" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(56,189,248,0.15);">
+          <span class="dot dot-blue"></span>
+        </div>
+        <div class="info">
+          <div class="name">ChillCraft Study</div>
+          <div class="sub">Lofi beats for focus</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@gentlekeysdaily" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(56,189,248,0.15);">
+          <span class="dot dot-blue"></span>
+        </div>
+        <div class="info">
+          <div class="name">GentleKeysDaily</div>
+          <div class="sub">Soft piano for relaxation</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@midnightsynthrun" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(56,189,248,0.15);">
+          <span class="dot dot-blue"></span>
+        </div>
+        <div class="info">
+          <div class="name">MidnightSynthRun</div>
+          <div class="sub">Synthwave for late nights</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@rainsonrepeat" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(56,189,248,0.15);">
+          <span class="dot dot-blue"></span>
+        </div>
+        <div class="info">
+          <div class="name">RainsOnRepeat</div>
+          <div class="sub">Rain sounds for sleep</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@lattebeatsradio" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(56,189,248,0.15);">
+          <span class="dot dot-blue"></span>
+        </div>
+        <div class="info">
+          <div class="name">LatteBeatsRadio</div>
+          <div class="sub">Jazz &amp; bossa nova vibes</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
+      <a class="link-card" href="https://youtube.com/@epicmomentandscoremusic" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(56,189,248,0.15);">
+          <span class="dot dot-blue"></span>
+        </div>
+        <div class="info">
+          <div class="name">EpicMomentAndScoreMusic</div>
+          <div class="sub">Cinematic &amp; epic scores</div>
+        </div>
+        <span class="arrow">›</span>
+      </a>
     </div>
-  </section>
 
-  <!-- Products Grid -->
-  <section id="products" class="section">
-    <div class="container text-center">
-      <h2 class="fade-in">Three APIs. Infinite Possibilities.</h2>
-      <p class="section-subtitle fade-in">From video generation to 3D asset creation, our APIs handle the heavy lifting so you can focus on building your product.</p>
-      <div class="grid-3">
-        <!-- ClipCraft -->
-        <div class="card fade-in fade-in-delay-1">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <h3>ClipCraft API</h3>
-          <p>Turn any topic into a complete video with voiceover, images, music, and captions.</p>
-          <ul>
-            <li>15+ natural AI voices</li>
-            <li>AI-generated backgrounds &amp; thumbnails</li>
-            <li>Shorts + landscape formats</li>
-          </ul>
-          <a href="clipcraft.html" class="btn btn-ghost">Learn More &rarr;</a>
-        </div>
-        <!-- AutoTube -->
-        <div class="card fade-in fade-in-delay-2">
-          <div class="card-icon cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>AutoTube</h3>
-          <p>Launch AI-powered faceless YouTube channels on complete autopilot.</p>
-          <ul>
-            <li>20+ niche templates</li>
-            <li>Auto-upload to YouTube</li>
-            <li>SEO-optimized metadata</li>
-          </ul>
-          <a href="autotube.html" class="btn btn-ghost">Learn More &rarr;</a>
-        </div>
-        <!-- MeshReady -->
-        <div class="card fade-in fade-in-delay-3">
-          <div class="card-icon orange">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>MeshReady API</h3>
-          <p>Generate game-ready 3D models from text with LODs and PBR textures.</p>
-          <ul>
-            <li>4-level LOD generation</li>
-            <li>PBR texture baking</li>
-            <li>Unity / Unreal / Godot export</li>
-          </ul>
-          <a href="meshready.html" class="btn btn-ghost">Learn More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Our Stores -->
+    <div class="group-title">🛍️ Our Stores</div>
 
-  <!-- How It Works -->
-  <section class="section" style="background: var(--surface);">
-    <div class="container text-center">
-      <h2 class="fade-in">How It Works</h2>
-      <p class="section-subtitle fade-in">Three steps. That's it.</p>
-      <div class="steps fade-in">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h4>Get Your API Key</h4>
-          <p>Sign up for a free account and generate your API key in seconds.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h4>Make a Request</h4>
-          <p>Send a simple JSON payload to any of our endpoints.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h4>Get Results</h4>
-          <p>Receive polished videos, managed channels, or production-ready 3D assets.</p>
-        </div>
+    <a class="link-card" href="https://app.gumroad.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(34,197,94,0.15);">🛒</div>
+      <div class="info">
+        <div class="name">Gumroad</div>
+        <div class="sub">Digital products — planners, templates &amp; guides</div>
       </div>
-      <div class="code-block fade-in" style="max-width: 700px; margin: 48px auto 0; text-align: left;">
-        <div class="code-header">
-          <span>cURL</span>
-          <button class="code-copy">Copy</button>
-        </div>
-        <div class="code-content"><span class="keyword">curl</span> -X POST https://api.toolsthatwork.dev/v1/video/generate \
-  -H <span class="string">"Authorization: Bearer YOUR_API_KEY"</span> \
-  -H <span class="string">"Content-Type: application/json"</span> \
-  -d <span class="string">'{
-    "topic": "Top 5 Productivity Hacks",
-    "style": "educational",
-    "voice": "nova",
-    "format": "landscape"
-  }'</span></div>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://etsy.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(34,197,94,0.15);">🏪</div>
+      <div class="info">
+        <div class="name">Etsy</div>
+        <div class="sub">Printable downloads &amp; digital art</div>
       </div>
-    </div>
-  </section>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://payhip.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(34,197,94,0.15);">📦</div>
+      <div class="info">
+        <div class="name">Payhip</div>
+        <div class="sub">Digital products &amp; courses</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
 
-  <!-- Stats -->
-  <section class="section">
-    <div class="container">
-      <div class="stats fade-in">
-        <div>
-          <div class="stat-number text-gradient">2.4M+</div>
-          <div class="stat-label">API Calls Served</div>
-        </div>
-        <div>
-          <div class="stat-number text-gradient">180K+</div>
-          <div class="stat-label">Videos Generated</div>
-        </div>
-        <div>
-          <div class="stat-number text-gradient">99.9%</div>
-          <div class="stat-label">Uptime SLA</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Stock Portfolios -->
+    <div class="group-title">📸 Stock Portfolios</div>
 
-  <!-- Pricing Preview -->
-  <section id="pricing" class="section" style="background: var(--surface);">
-    <div class="container text-center">
-      <h2 class="fade-in">Simple, Transparent Pricing</h2>
-      <p class="section-subtitle fade-in">Start free. Scale as you grow. No hidden fees.</p>
-      <div class="grid-3">
-        <div class="pricing-card fade-in fade-in-delay-1">
-          <h3>Free</h3>
-          <p>For testing and prototyping</p>
-          <div class="price">$0<span>/mo</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 50 API calls/month</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> All 3 products</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Community support</li>
-          </ul>
-          <a href="https://frenchauto.gumroad.com/l/aedhdm" class="btn btn-secondary" target="_blank">Get Started Free</a>
-        </div>
-        <div class="pricing-card featured fade-in fade-in-delay-2">
-          <h3>Pro</h3>
-          <p>For growing projects</p>
-          <div class="price">$49<span>/mo</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2,000 API calls/month</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Priority processing</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Email support</li>
-          </ul>
-          <a href="https://frenchauto.gumroad.com/l/aedhdm" class="btn btn-primary" target="_blank">Start Pro Trial</a>
-        </div>
-        <div class="pricing-card fade-in fade-in-delay-3">
-          <h3>Enterprise</h3>
-          <p>For teams and agencies</p>
-          <div class="price">$199<span>/mo</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited API calls</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated infrastructure</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Slack + priority support</li>
-          </ul>
-          <a href="contact.html" class="btn btn-secondary">Contact Sales</a>
-        </div>
+    <a class="link-card" href="https://contributor.stock.adobe.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(56,189,248,0.15);">🎨</div>
+      <div class="info">
+        <div class="name">Adobe Stock</div>
+        <div class="sub">AI-generated stock images</div>
       </div>
-      <p style="margin-top: 32px;"><a href="pricing.html" class="btn btn-ghost">See full pricing details &rarr;</a></p>
-    </div>
-  </section>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://www.shutterstock.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(56,189,248,0.15);">📷</div>
+      <div class="info">
+        <div class="name">Shutterstock</div>
+        <div class="sub">Photography &amp; illustrations</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://www.dreamstime.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(56,189,248,0.15);">🖼️</div>
+      <div class="info">
+        <div class="name">Dreamstime</div>
+        <div class="sub">Stock photography portfolio</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://www.123rf.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(56,189,248,0.15);">📸</div>
+      <div class="info">
+        <div class="name">123RF</div>
+        <div class="sub">Creative stock assets</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://www.alamy.com" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(56,189,248,0.15);">🏔️</div>
+      <div class="info">
+        <div class="name">Alamy</div>
+        <div class="sub">High-res stock photography</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
 
-  <!-- YouTube Channels -->
-  <section class="section" style="background: var(--surface);">
-    <div class="container">
-      <h2 class="section-title fade-in">Our YouTube Channels</h2>
-      <p class="section-subtitle fade-in">12 AI-powered faceless channels — free to watch, monetized, and growing.</p>
-      <div class="grid-3" style="margin-top: 40px; gap: 16px;">
-        <a href="https://www.youtube.com/@ProductivityWithPurpose" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">ProductivityWithPurpose</span>
-        </a>
-        <a href="https://www.youtube.com/@HabitHacksForYou" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">HabitHacksForYou</span>
-        </a>
-        <a href="https://www.youtube.com/@AnxietyExitRamp" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">AnxietyExitRamp</span>
-        </a>
-        <a href="https://www.youtube.com/@BestMindBlownDaily" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">BestMindBlownDaily</span>
-        </a>
-        <a href="https://www.youtube.com/@PassiveIncomePlaybook-t2q" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">PassiveIncomePlaybook</span>
-        </a>
-        <a href="https://www.youtube.com/@AIToolsUnboxedNow" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">AIToolsUnboxedNow</span>
-        </a>
-        <a href="https://www.youtube.com/@EpicMomentAndScoreMusic" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">EpicMomentAndScoreMusic</span>
-        </a>
-        <a href="https://www.youtube.com/@LatteBeatsRadio" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">LatteBeatsRadio</span>
-        </a>
-        <a href="https://www.youtube.com/@RainsOnRepeat" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">RainsOnRepeat</span>
-        </a>
-        <a href="https://www.youtube.com/@GentleKeysDaily" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">GentleKeysDaily</span>
-        </a>
-        <a href="https://www.youtube.com/@MidnightSynthRun" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">MidnightSynthRun</span>
-        </a>
-        <a href="https://www.youtube.com/@ChillCraftStudy" target="_blank" class="feature-card fade-in" style="text-decoration:none; display:flex; align-items:center; gap:12px; padding: 16px 20px;">
-          <svg viewBox="0 0 24 24" fill="#ff0000" width="28" height="28"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.2v2c0 2.1.3 4.2.3 4.2s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.2 21.4 12 21.5 12 21.5s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8l6.6 3.8-6.6 3.7z"/></svg>
-          <span style="color:var(--text); font-weight:600;">ChillCraft Study</span>
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Support Us -->
+    <div class="group-title">☕ Support Us</div>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="fade-in">Ready to Build?</h2>
-      <p class="section-subtitle fade-in">Get your free API key and start building in minutes.</p>
-      <div class="cta-form fade-in">
-        <input type="email" placeholder="Enter your email" aria-label="Email address">
-        <button class="btn btn-primary">Get API Key</button>
+    <a class="link-card" href="https://buymeacoffee.com/toolsthatwork" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(251,191,36,0.15);">☕</div>
+      <div class="info">
+        <div class="name">Buy Me a Coffee</div>
+        <div class="sub">Support the work — one coffee at a time</div>
       </div>
-    </div>
-  </section>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://ko-fi.com/toolsthatwork" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(29,161,242,0.15);">💙</div>
+      <div class="info">
+        <div class="name">Ko-fi</div>
+        <div class="sub">Buy us a Ko-fi — no subscription needed</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect width="32" height="32" rx="6" fill="#6c5ce7"/><text x="16" y="23" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">T</text></svg>
-            Tools That Work
-          </a>
-          <p>Reliable AI-powered APIs for video, content automation, and 3D assets. Built to just work.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Products</h4>
-          <a href="clipcraft.html">ClipCraft API</a>
-          <a href="autotube.html">AutoTube</a>
-          <a href="meshready.html">MeshReady API</a>
-        </div>
-        <div class="footer-col">
-          <h4>Developers</h4>
-          <a href="docs.html">Documentation</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="#">API Status</a>
-          <a href="#">Changelog</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Tools That Work. All rights reserved.</span>
-        <div>
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- Affiliate Partners -->
+    <div class="group-title">🤝 Affiliate Partners — tools we actually use</div>
 
-  <script src="js/main.js"></script>
-  <script src="js/pricing.js"></script>
+    <a class="link-card" href="https://www.amazon.com/?tag=toolsthatw09e-20" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(255,153,0,0.15);">📦</div>
+      <div class="info">
+        <div class="name">Amazon <span style="font-size:.65rem;color:#f59e0b;font-weight:700;margin-left:4px;">4–8% commission</span></div>
+        <div class="sub">Shop Amazon — we earn a small commission</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+    <a class="link-card" href="https://systeme.io/?sa=sa026811915595e130daa916b24b27c0a42cc746ee" target="_blank" rel="noopener">
+      <div class="icon" style="background:rgba(245,158,11,0.15);">🏗️</div>
+      <div class="info">
+        <div class="name">Systeme.io <span style="font-size:.65rem;color:#22c55e;font-weight:700;margin-left:4px;">60% recurring</span></div>
+        <div class="sub">Build your entire online business for free</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <p style="font-size:.7rem;color:#475569;text-align:center;margin-top:16px;font-style:italic;">Some links are affiliate links — we earn a small commission at no extra cost to you.</p>
+
+    <footer>© 2026 Tools That Work</footer>
+
+  </div>
 </body>
 </html>
