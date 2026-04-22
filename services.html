@@ -3,17 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Tools That Work</title>
-  <meta name="description" content="Hire the Tools That Work team for custom API integration, YouTube automation, faceless video channels, and AI video pipelines.">
-  <meta property="og:title" content="Services — Tools That Work">
-  <meta property="og:description" content="Custom automation services. We build it, you profit.">
+  <title>Automation, Programming & Portfolio - Tools That Work</title>
+  <meta name="description" content="Automation cleanup, dashboards, websites, scripts, game systems, debugging, and programming support from Tools That Work.">
+  <meta property="og:title" content="Automation, Programming & Portfolio - Tools That Work">
+  <meta property="og:description" content="Practical automation cleanup, programming, dashboards, websites, and game-tech support for small teams and solo builders.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236c5ce7'/><text x='16' y='23' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='system-ui'>T</text></svg>">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .portfolio-hero {
+      min-height: auto;
+      padding: 140px 24px 80px;
+      text-align: left;
+    }
+    .portfolio-hero .container {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .portfolio-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border: 1px solid rgba(0,206,201,.35);
+      border-radius: 999px;
+      color: var(--secondary);
+      background: rgba(0,206,201,.08);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .portfolio-hero h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+    }
+    .portfolio-hero p {
+      max-width: 690px;
+      font-size: 1.14rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .proof-panel {
+      background: #0d1117;
+      border: 1px solid rgba(139,124,240,.35);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,.45);
+    }
+    .proof-titlebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid #252b3a;
+      color: #d8d9e3;
+      font-family: var(--font-mono);
+      font-size: .78rem;
+    }
+    .proof-lights {
+      display: flex;
+      gap: 6px;
+    }
+    .proof-lights span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+    .proof-lights span:nth-child(2) { background: var(--primary-light); }
+    .proof-lights span:nth-child(3) { background: var(--warning); }
+    .proof-body {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      font-family: var(--font-mono);
+      font-size: .82rem;
+    }
+    .proof-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #252b3a;
+      border-radius: 8px;
+      background: #111723;
+    }
+    .proof-row strong { color: #fff; }
+    .proof-row small { display: block; color: #8d95aa; margin-top: 2px; }
+    .status {
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 800;
+      color: #0b1020;
+      background: var(--secondary);
+    }
+    .status.warn { background: #f7bf52; }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .service-card,
+    .skill-card,
+    .case-card,
+    .package-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 26px;
+    }
+    .service-card h3,
+    .skill-card h3,
+    .case-card h3,
+    .package-card h3 {
+      margin-bottom: 10px;
+    }
+    .service-card p,
+    .skill-card p,
+    .case-card p,
+    .package-card p {
+      font-size: .96rem;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .tag-list span {
+      padding: 6px 10px;
+      border: 1px solid rgba(139,124,240,.32);
+      border-radius: 999px;
+      color: var(--primary-light);
+      background: rgba(108,92,231,.08);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+    .package-card.featured {
+      border-color: rgba(0,206,201,.55);
+      box-shadow: 0 0 0 1px rgba(0,206,201,.12), var(--shadow);
+    }
+    .price {
+      margin: 10px 0 18px;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .price span {
+      color: var(--text-secondary);
+      font-size: .95rem;
+      font-weight: 500;
+    }
+    .clean-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 0;
+      color: var(--text-secondary);
+      font-size: .94rem;
+    }
+    .clean-list li {
+      position: relative;
+      padding-left: 22px;
+    }
+    .clean-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .65em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+    .cta-band {
+      padding: 42px;
+      border: 1px solid rgba(0,206,201,.32);
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(108,92,231,.16), rgba(0,206,201,.1));
+      text-align: center;
+    }
+    .cta-band p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+    }
+    @media (max-width: 900px) {
+      .portfolio-hero .container,
+      .service-grid,
+      .case-grid,
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-hero {
+        text-align: center;
+      }
+      .portfolio-hero p,
+      .portfolio-hero h1 {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -21,17 +239,10 @@
         Tools That Work
       </a>
       <div class="nav-links">
-        <div class="nav-dropdown">
-          <a href="#">Products ▾</a>
-          <div class="nav-dropdown-menu">
-            <a href="clipcraft.html"><svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> ClipCraft API</a>
-            <a href="autotube.html"><svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> AutoTube</a>
-            <a href="meshready.html"><svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> MeshReady API</a>
-          </div>
-        </div>
-        <a href="pricing.html">Pricing</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="docs.html">Docs</a>
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Portfolio</a>
+        <a href="#packages">Services</a>
+        <a href="shop.html">Shop</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -39,166 +250,215 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero hero-product">
+  <section class="hero portfolio-hero">
     <div class="container">
-      <h1>We Build It.<br><span class="text-gradient">You Profit.</span></h1>
-      <p>Done-for-you automation services. Custom pipelines, faceless YouTube channels, and API integrations — delivered fast.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
-        <a href="#services" class="btn btn-secondary btn-lg">See Services</a>
+      <div>
+        <div class="portfolio-kicker">Automation cleanup + programming support</div>
+        <h1>Practical systems for messy workflows, websites, dashboards, and game tech.</h1>
+        <p>I help solo builders and small teams turn fragile manual work into cleaner scripts, dashboards, websites, and production-ready tools. The focus is simple: less chaos, fewer broken tasks, clearer data, and software that is easier to run.</p>
+        <div class="hero-actions">
+          <a href="mailto:Frenchyautomation1337@gmail.com?subject=Automation%20cleanup%20request" class="btn btn-primary btn-lg">Book a cleanup</a>
+          <a href="#proof" class="btn btn-secondary btn-lg">See proof of work</a>
+        </div>
+      </div>
+      <div class="proof-panel" aria-label="Dashboard proof preview">
+        <div class="proof-titlebar">
+          <span>ops-command-center.local</span>
+          <div class="proof-lights"><span></span><span></span><span></span></div>
+        </div>
+        <div class="proof-body">
+          <div class="proof-row"><div><strong>Pipeline Health</strong><small>Scheduled jobs, failures, next runs</small></div><span class="status">LIVE</span></div>
+          <div class="proof-row"><div><strong>Website SEO</strong><small>Sitemap, Search Console, AdSense checks</small></div><span class="status">OK</span></div>
+          <div class="proof-row"><div><strong>Revenue Blockers</strong><small>Affiliate, API, OAuth, store readiness</small></div><span class="status warn">WATCH</span></div>
+          <div class="proof-row"><div><strong>Silent Scheduler</strong><small>Background tasks without pop-up windows</small></div><span class="status">FIXED</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section" id="services">
     <div class="container">
-      <h2 class="section-title fade-in">What We Build For You</h2>
-      <p class="section-subtitle fade-in">No fluff. Real automation that runs while you sleep.</p>
-
-      <div class="grid-2" style="gap: 32px; margin-top: 48px;">
-
-        <!-- Faceless YouTube -->
-        <div class="feature-card fade-in">
-          <div class="feature-icon" style="background: rgba(108,92,231,0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <h3>Faceless YouTube Channel</h3>
-          <p style="color:var(--text-secondary); margin-bottom: 16px;">We set up a complete faceless YouTube channel in your niche — scripts, voiceover, editing, thumbnails, and scheduling. Ready to monetize.</p>
-          <ul style="color:var(--text-secondary); margin-bottom: 24px; padding-left: 20px; line-height: 2;">
-            <li>Full channel setup (branding, art, description)</li>
-            <li>10 ready-to-upload AI-generated videos</li>
-            <li>Automated upload schedule configured</li>
-            <li>SEO-optimized titles, descriptions &amp; tags</li>
-            <li>Niche research included</li>
-          </ul>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span style="font-size:2rem; font-weight:800; color:var(--text);">$149</span>
-              <span style="color:var(--text-secondary);"> one-time</span>
-            </div>
-            <a href="contact.html?service=faceless-youtube" class="btn btn-primary">Order Now</a>
-          </div>
+      <h2 class="section-title fade-in">What I Can Fix</h2>
+      <p class="section-subtitle fade-in">Small, practical jobs with a clear result. No vague strategy deck. No oversized rebuild unless the existing system truly needs it.</p>
+      <div class="service-grid">
+        <div class="service-card fade-in">
+          <h3>Automation Cleanup</h3>
+          <p>Windows tasks, scripts, recurring reports, CSV/JSON workflows, API checks, silent background runs, and daily jobs that need to stop breaking.</p>
         </div>
-
-        <!-- YouTube Automation Setup -->
-        <div class="feature-card fade-in">
-          <div class="feature-icon" style="background: rgba(0,206,201,0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>YouTube Automation Setup</h3>
-          <p style="color:var(--text-secondary); margin-bottom: 16px;">We install and configure our AutoTube pipeline on your machine or server. Fully hands-off video generation and uploading — forever.</p>
-          <ul style="color:var(--text-secondary); margin-bottom: 24px; padding-left: 20px; line-height: 2;">
-            <li>AutoTube installed &amp; configured for your channel</li>
-            <li>Google Trends integration for viral topics</li>
-            <li>Custom niche &amp; voice settings</li>
-            <li>Windows Task Scheduler or cron setup</li>
-            <li>30 days of support included</li>
-          </ul>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span style="font-size:2rem; font-weight:800; color:var(--text);">$199</span>
-              <span style="color:var(--text-secondary);"> one-time</span>
-            </div>
-            <a href="contact.html?service=youtube-automation" class="btn btn-primary">Order Now</a>
-          </div>
+        <div class="service-card fade-in fade-in-delay-1">
+          <h3>Dashboards & Reporting</h3>
+          <p>Local Flask/Python dashboards, health panels, scheduler monitoring, revenue blockers, website uptime, Search Console summaries, and business status views.</p>
         </div>
-
-        <!-- Custom Video Pipeline -->
-        <div class="feature-card fade-in">
-          <div class="feature-icon" style="background: rgba(225,112,85,0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2" width="28" height="28"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3>Custom Video Generation Pipeline</h3>
-          <p style="color:var(--text-secondary); margin-bottom: 16px;">Need something specific? We build a fully custom AI video pipeline tailored to your workflow — any platform, any style, any scale.</p>
-          <ul style="color:var(--text-secondary); margin-bottom: 24px; padding-left: 20px; line-height: 2;">
-            <li>Custom script generation (GPT-powered)</li>
-            <li>Voiceover, music, B-roll automation</li>
-            <li>TikTok, YouTube Shorts, or long-form</li>
-            <li>Multi-platform output support</li>
-            <li>Full source code delivered</li>
-          </ul>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span style="font-size:2rem; font-weight:800; color:var(--text);">$349</span>
-              <span style="color:var(--text-secondary);"> one-time</span>
-            </div>
-            <a href="contact.html?service=video-pipeline" class="btn btn-primary">Order Now</a>
-          </div>
+        <div class="service-card fade-in fade-in-delay-2">
+          <h3>Websites & Landing Pages</h3>
+          <p>Fast static sites, GitHub Pages, HTML/CSS/JS fixes, SEO basics, sitemap cleanup, AdSense setup checks, forms, and practical conversion pages.</p>
         </div>
-
-        <!-- Custom API Integration -->
-        <div class="feature-card fade-in">
-          <div class="feature-icon" style="background: rgba(253,203,110,0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fdcb6e" stroke-width="2" width="28" height="28"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>Custom API Integration</h3>
-          <p style="color:var(--text-secondary); margin-bottom: 16px;">We integrate any API into your existing workflow or build a custom one from scratch. Fast, clean, documented code delivered to your repo.</p>
-          <ul style="color:var(--text-secondary); margin-bottom: 24px; padding-left: 20px; line-height: 2;">
-            <li>REST or webhook integration</li>
-            <li>Python, Node.js, or FastAPI</li>
-            <li>Error handling &amp; rate limit management</li>
-            <li>Full documentation included</li>
-            <li>Deployed to your server or cloud</li>
-          </ul>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span style="font-size:2rem; font-weight:800; color:var(--text);">$249</span>
-              <span style="color:var(--text-secondary);"> one-time</span>
-            </div>
-            <a href="contact.html?service=api-integration" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Custom Quote -->
-  <section class="section" style="background: var(--surface);">
-    <div class="container" style="text-align:center; max-width: 640px;">
-      <h2 class="fade-in">Need Something Custom?</h2>
-      <p class="fade-in" style="color:var(--text-secondary); margin: 16px 0 32px;">Got a bigger project in mind? We handle custom automation, bots, scrapers, content pipelines, and more. Tell us what you need and we will quote within 24 hours.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg fade-in">Get a Free Quote</a>
-    </div>
-  </section>
-
-  <!-- Why Us -->
-  <section class="section">
+  <section class="section" id="skills">
     <div class="container">
-      <h2 class="section-title fade-in">Why Hire Us</h2>
-      <div class="grid-3" style="margin-top: 40px;">
-        <div class="feature-card fade-in" style="text-align:center;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" width="36" height="36" style="margin-bottom:12px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <h3>Fast Delivery</h3>
-          <p style="color:var(--text-secondary);">Most projects delivered in 2–5 days. No waiting weeks for an agency.</p>
+      <h2 class="section-title fade-in">Programming & Technical Skills</h2>
+      <p class="section-subtitle fade-in">Useful when the job is not just a website tweak and needs real debugging, engine work, scripting, or tool building.</p>
+      <div class="case-grid">
+        <div class="skill-card fade-in">
+          <h3>Languages</h3>
+          <p>C++, C#, Python, Java, JavaScript, HTML, CSS, SQL-style data work, shell scripting, and automation glue code.</p>
+          <div class="tag-list">
+            <span>C++</span><span>C#</span><span>Python</span><span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+          </div>
         </div>
-        <div class="feature-card fade-in" style="text-align:center;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" width="36" height="36" style="margin-bottom:12px;"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          <h3>Real Automation</h3>
-          <p style="color:var(--text-secondary);">We build things that actually run. Not templates — real pipelines you own.</p>
+        <div class="skill-card fade-in fade-in-delay-1">
+          <h3>Game & Engine Tech</h3>
+          <p>Unity, ECS, DOTS, Godot, Unreal, gameplay systems, tooling, debugging, performance triage, and build pipeline support.</p>
+          <div class="tag-list">
+            <span>Unity</span><span>ECS</span><span>DOTS</span><span>Godot</span><span>Unreal</span><span>Tools</span><span>Debugging</span>
+          </div>
         </div>
-        <div class="feature-card fade-in" style="text-align:center;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2" width="36" height="36" style="margin-bottom:12px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <h3>You Own Everything</h3>
-          <p style="color:var(--text-secondary);">Full source code, no lock-in. Cancel anytime and keep what we built.</p>
+        <div class="skill-card fade-in">
+          <h3>Automation Stack</h3>
+          <p>Python scripts, Flask dashboards, REST APIs, OAuth flows, Google APIs, scheduled tasks, logs, CLI tools, JSON/CSV processing, and deployment scripts.</p>
+          <div class="tag-list">
+            <span>Flask</span><span>APIs</span><span>OAuth</span><span>Google Cloud</span><span>Task Scheduler</span><span>JSON</span><span>CSV</span>
+          </div>
+        </div>
+        <div class="skill-card fade-in fade-in-delay-1">
+          <h3>Bug-Fixing Style</h3>
+          <p>Trace the real failure, remove noisy assumptions, patch the smallest useful surface, verify with logs or live checks, and leave the system easier to inspect next time.</p>
+          <div class="tag-list">
+            <span>Bug triage</span><span>Regression checks</span><span>Logs</span><span>Refactors</span><span>Verification</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="section" id="proof">
+    <div class="container">
+      <h2 class="section-title fade-in">Proof Of Work</h2>
+      <p class="section-subtitle fade-in">These are practical examples of the kind of work I can do for someone else's business or project.</p>
+      <div class="case-grid">
+        <div class="case-card fade-in">
+          <span class="badge badge-secondary">Ops dashboard</span>
+          <h3>Local command center for a content pipeline</h3>
+          <p>Built a local dashboard that tracks scheduled tasks, failed runs, channel status, revenue blockers, Search Console data, AdSense install checks, sitemap health, and live site availability.</p>
+          <ul class="clean-list">
+            <li>Made failures visible instead of hidden in logs.</li>
+            <li>Moved secret values away from the browser view.</li>
+            <li>Added live JSON endpoints for status panels.</li>
+          </ul>
+        </div>
+        <div class="case-card fade-in fade-in-delay-1">
+          <span class="badge badge-primary">Automation cleanup</span>
+          <h3>Silent scheduled jobs on Windows</h3>
+          <p>Cleaned recurring scripts so background jobs run without stealing focus or opening visible command windows during normal computer use.</p>
+          <ul class="clean-list">
+            <li>Converted noisy jobs to hidden launchers.</li>
+            <li>Added daily report refreshes.</li>
+            <li>Verified task results through Task Scheduler.</li>
+          </ul>
+        </div>
+        <div class="case-card fade-in">
+          <span class="badge badge-hot">Website recovery</span>
+          <h3>SEO, sitemap, and AdSense readiness</h3>
+          <p>Generated SEO pages, deployed sitemap updates, verified live page status, connected Search Console fetches, and added AdSense installation checks.</p>
+          <ul class="clean-list">
+            <li>Confirmed live sitemap and page status.</li>
+            <li>Added automated Search Console data refresh.</li>
+            <li>Checked ad script and ads.txt presence.</li>
+          </ul>
+        </div>
+        <div class="case-card fade-in fade-in-delay-1">
+          <span class="badge badge-secondary">Programming support</span>
+          <h3>Code, gameplay, and tool debugging</h3>
+          <p>Support for C++, C#, Python, Java, Unity, Godot, Unreal, ECS, DOTS, websites, scripts, and custom internal tools when something needs to be fixed or made easier to maintain.</p>
+          <ul class="clean-list">
+            <li>Bug diagnosis and targeted patches.</li>
+            <li>Tooling and workflow improvements.</li>
+            <li>Build, data, and automation support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="packages">
+    <div class="container">
+      <h2 class="section-title fade-in">Simple Service Packages</h2>
+      <p class="section-subtitle fade-in">Pricing depends on scope, but these ranges keep the conversation concrete.</p>
+      <div class="package-grid">
+        <div class="package-card fade-in">
+          <h3>Quick Cleanup</h3>
+          <div class="price">$150+ <span>CAD</span></div>
+          <p>Best for a broken script, noisy scheduled task, small website issue, or one workflow that needs a clear fix.</p>
+          <ul class="clean-list">
+            <li>One focused problem</li>
+            <li>Short written summary</li>
+            <li>Fix or clear next step</li>
+          </ul>
+        </div>
+        <div class="package-card featured fade-in fade-in-delay-1">
+          <h3>Automation Setup</h3>
+          <div class="price">$400+ <span>CAD</span></div>
+          <p>Best for a small dashboard, recurring report, Google/API workflow, local automation, or messy process cleanup.</p>
+          <ul class="clean-list">
+            <li>Working script or dashboard</li>
+            <li>Basic logging and checks</li>
+            <li>Handoff notes</li>
+          </ul>
+        </div>
+        <div class="package-card fade-in fade-in-delay-2">
+          <h3>Technical Sprint</h3>
+          <div class="price">$750+ <span>CAD</span></div>
+          <p>Best for deeper programming support, game-tech debugging, engine workflow cleanup, or a more complete internal tool.</p>
+          <ul class="clean-list">
+            <li>Multi-step technical work</li>
+            <li>Codebase investigation</li>
+            <li>Implementation and verification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Need a messy workflow cleaned up?</h2>
+        <p>Send the problem, what tool or site is involved, and what a good outcome looks like. I will tell you honestly if it is a quick fix, a bigger job, or not worth paying for.</p>
+        <a href="mailto:Frenchyautomation1337@gmail.com?subject=Tools%20That%20Work%20service%20request" class="btn btn-primary btn-lg">Email Tools That Work</a>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect width="32" height="32" rx="6" fill="#6c5ce7"/><text x="16" y="23" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">T</text></svg> Tools That Work</a>
-          <p>Reliable AI-powered APIs for video, content automation, and 3D assets. Built to just work.</p>
+          <p>Automation cleanup, dashboards, websites, scripts, and programming support for practical work that needs to run.</p>
         </div>
-        <div class="footer-col"><h4>Products</h4><a href="clipcraft.html">ClipCraft API</a><a href="autotube.html">AutoTube</a><a href="meshready.html">MeshReady API</a></div>
-        <div class="footer-col"><h4>Services</h4><a href="services.html">Faceless YouTube</a><a href="services.html">YouTube Automation</a><a href="services.html">Video Pipeline</a><a href="services.html">API Integration</a></div>
-        <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Automation Cleanup</a>
+          <a href="#skills">Programming Skills</a>
+          <a href="#proof">Proof of Work</a>
+          <a href="#packages">Packages</a>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:Frenchyautomation1337@gmail.com">Frenchyautomation1337@gmail.com</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Tools That Work. All rights reserved.</span>
